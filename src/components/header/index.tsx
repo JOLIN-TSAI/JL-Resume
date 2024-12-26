@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Sty from "@/components/header/header.module.scss";
-import Logo from "@/assets/logo.png";
 import { IoLogoGithub } from "react-icons/io";
 import { FaCodepen } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
@@ -22,7 +21,7 @@ export default function Index() {
 	return (
 		<header className={`${Sty.headerAll} bg-info`}>
 			<div className={Sty.logoBox}>
-				<img src={Logo} alt="Logo" className={Sty.logo} />
+				<img src="/logo.png" alt="Logo" className={Sty.logo} />
 			</div>
 			<nav className={Sty.nav}>
 				<ul className={Sty.navItems}>
