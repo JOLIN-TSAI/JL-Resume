@@ -1,13 +1,17 @@
 import Header from "@/components/header";
+import InformationName from "@/components/information/InformationName";
+import InformationProjectsItem from "@/components/information/InformationProjectsItem";
 import Sty from "@/styles/index.module.scss";
 
 const HomePage = () => {
 	return (
 		<>
-			<Header />
-			<div className={`${Sty["frontPage"]}`}>
-				<h1 className="">Welcome to My Resume</h1>
-				<p>This is the homepage of my personal resume website.</p>
+			<div className="d-flex flex-column gap-5">
+				<Header />
+				<div className={`${Sty.frontPage} container`}>
+					<InformationName />
+					<InformationProjectsItem />
+				</div>
 			</div>
 		</>
 	);
