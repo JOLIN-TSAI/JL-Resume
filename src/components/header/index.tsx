@@ -20,8 +20,13 @@ const contactIcons = [
 export default function Index() {
 	return (
 		<header className={`${Sty.headerAll} bg-info`}>
-			<div className={Sty.logoBox}>
-				<img src="/logo.png" alt="Logo" className={Sty.logo} />
+			<div className="d-flex">
+				<div className={Sty.logoBox}>
+					<img src="/logo.png" alt="Logo" className={Sty.logo} />
+				</div>
+				<p className="m-auto" style={{ color: "yellow" }}>
+					蔡依琳的個人履歷網站
+				</p>
 			</div>
 			<nav className={Sty.nav}>
 				<ul className={Sty.navItems}>

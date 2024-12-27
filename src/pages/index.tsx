@@ -1,16 +1,18 @@
 import Header from "@/components/header";
 import InformationName from "@/components/information/InformationName";
 import InformationProjectsItem from "@/components/information/InformationProjectsItem";
+import InformationExperience from "@/components/information/informationExperience";
 import Sty from "@/styles/index.module.scss";
 
 const HomePage = () => {
 	return (
 		<>
-			<div className="d-flex flex-column gap-5">
+			<div className={`${Sty.all}`}>
 				<Header />
 				<div className={`${Sty.frontPage} container`}>
 					<InformationName />
 					<InformationProjectsItem />
+					<InformationExperience />
 				</div>
 			</div>
 		</>
