@@ -18,7 +18,9 @@ const HomePage = () => {
 					<InformationExperience />
 					<InformationAddress />
 				</div>
+				<hr />
 				<ExperienceTimeline />
+				<hr />
 				<Project />
 			</div>
 		</>

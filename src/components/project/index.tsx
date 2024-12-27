@@ -32,20 +32,63 @@ export default function Project() {
 			url: "/project/sweetyTime/shopBackstage-detail.png",
 		},
 	];
+	const skills = [
+		{ title: "HTML", url: "/project/sweetyTime/skills/HTML.png" },
+		{ title: "CSS", url: "/project/sweetyTime/skills/CSS.png" },
+		{
+			title: "JavaScript",
+			url: "/project/sweetyTime/skills/JavaScript.png",
+		},
+		{ title: "Bootstrap", url: "/project/sweetyTime/skills/Bootstrap.png" },
+		{ title: "Sass", url: "/project/sweetyTime/skills/Sass.png" },
+		{
+			title: "SweetAlert2",
+			url: "/project/sweetyTime/skills/SweetAlert2.png",
+		},
+		{ title: "MUI", url: "/project/sweetyTime/skills/MUI.png" },
+		{ title: "GSAP", url: "/project/sweetyTime/skills/GSAP.png" },
+		{ title: "React.js", url: "/project/sweetyTime/skills/React.png" },
+		{ title: "Next.js", url: "/project/sweetyTime/skills/Next.png" },
+		{ title: "Express.js", url: "/project/sweetyTime/skills/express.png" },
+		{ title: "Node.js", url: "/project/sweetyTime/skills/node.png" },
+		{ title: "REST API", url: "/project/sweetyTime/skills/RestAPI.png" },
+		{ title: "MySQL", url: "/project/sweetyTime/skills/MySQL.png" },
+	];
+
 	return (
 		<>
-			<div>
+			<div className={Sty.all}>
 				<h2>SweetyTime甜覓時光</h2>
-
-				<h4>品牌簡介</h4>
-				<p>
-					甜覓食光SweetyTime 是一個專注於甜點的綜合平台，
-					致力於為消費者提供一站式的甜點購物體驗。
-					我們匯集眾多優質甜點店家，讓消費者能輕鬆探索與選擇心儀的甜品，無論購物還是學習甜點製作，都能在這裡享受甜蜜時光。填補了現今電商平台中對甜點領域關注的空白。
-				</p>
-				<h4>
-					個人使用技術：<span></span>
-				</h4>
+				<div className={`${Sty.brand} ${Sty.introduction}`}>
+					<h4>品牌簡介</h4>
+					<p>
+						甜覓食光SweetyTime是一個
+						<strong>專注於甜點的綜合平台</strong>，
+						致力於為消費者提供一站式的甜點購物體驗。
+						我們匯集眾多優質甜點店家，讓消費者能輕鬆探索與選擇心儀的甜品，無論購物還是學習甜點製作，都能在這裡享受甜蜜時光。填補了現今電商平台中對甜點領域關注的空白。
+					</p>
+				</div>
+				<div className={`${Sty.skill} ${Sty.introduction}`}>
+					<h4>使用技術</h4>
+					<div className={Sty.skillItems}>
+						{skills.map((skill, index) => (
+							<div
+								key={index}
+								style={{
+									display: "flex",
+									flexDirection: "column",
+									alignItems: "center",
+								}}>
+								<h6>{skill.title}</h6>
+								<img
+									src={skill.url}
+									alt={skill.title}
+									style={{ width: "80px", height: "80px" }}
+								/>
+							</div>
+						))}
+					</div>
+				</div>
 			</div>
 			<div className={Sty.project}>
 				{shops.map((shop, index) => (
