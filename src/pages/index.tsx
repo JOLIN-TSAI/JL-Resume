@@ -4,14 +4,14 @@ import InformationProjectsItem from "@/components/information/informationProject
 import InformationExperience from "@/components/information/informationExperience";
 import InformationAddress from "@/components/information/informationAddress";
 import ExperienceTimeline from "@/components/ExperienceTimeline/ExperienceTimeline";
-
+import Project from "@/components/project";
 import Sty from "@/styles/index.module.scss";
 
 const HomePage = () => {
 	return (
 		<>
-			<div className={`${Sty.all}`}>
-				<Header />
+			<Header />
+			<div className={`${Sty.all} container`}>
 				<div className={`${Sty.frontPage} container`}>
 					<InformationName />
 					<InformationProjectsItem />
@@ -19,6 +19,7 @@ const HomePage = () => {
 					<InformationAddress />
 				</div>
 				<ExperienceTimeline />
+				<Project />
 			</div>
 		</>
 	);
