@@ -1,6 +1,7 @@
 .headerAll {
 	position: sticky;
 	top: 0;
+	z-index: 999;
 	display: flex;
 	padding: 0 50px;
 	justify-content: space-between;
