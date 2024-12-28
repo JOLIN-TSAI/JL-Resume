@@ -5,6 +5,7 @@ import InformationExperience from "@/components/information/informationExperienc
 import InformationAddress from "@/components/information/informationAddress";
 import ExperienceTimeline from "@/components/ExperienceTimeline/ExperienceTimeline";
 import Project from "@/components/project";
+import Games from "@/components/games";
 import Sty from "@/styles/index.module.scss";
 
 const HomePage = () => {
@@ -22,6 +23,10 @@ const HomePage = () => {
 				<ExperienceTimeline />
 				<hr />
 				<Project />
+				<hr />
+				<Games />
+				<hr />
+				<hr />
 			</div>
 		</>
 	);
