@@ -35,12 +35,12 @@
 			padding: 0;
 			gap: 30px;
 
-			.navLink {
-				text-decoration: none;
-				color: inherit;
-
+			.point {
+				padding: 10px;
+				cursor: pointer;
+				border-radius: 15px;
 				&:hover {
-					color: #007bff;
+					background-color: #56a0ef;
 				}
 			}
 		}

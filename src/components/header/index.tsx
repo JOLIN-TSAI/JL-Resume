@@ -1,23 +1,29 @@
-import React from "react";
-import { Link } from "react-router-dom";
+// import React from "react";
+// import { Link } from "react-router-dom";
+import { RefObject } from "react";
 import Sty from "@/components/header/header.module.scss";
 import { IoLogoGithub } from "react-icons/io";
 import { FaCodepen } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 
-const navItems = [
-	{ text: "關於我", link: "/about" },
-	{ text: "個人專案", link: "/projects" },
-	{ text: "趣味遊戲", link: "/games" },
-];
+interface HeaderProps {
+	scroll: (ref: RefObject<HTMLElement>) => void;
+	sectionRefs: RefObject<HTMLElement>[];
+}
 
-const contactIcons = [
-	{ icon: <MdOutlineEmail />, link: "mailto:lonely507487@gmail.com" },
-	{ icon: <IoLogoGithub />, link: "https://github.com/JOLIN-TSAI" },
-	{ icon: <FaCodepen />, link: "https://codepen.io/JOLIN-TSAI-the-bold" },
-];
+export default function Index({ scroll, sectionRefs }: HeaderProps) {
+	const navItems = [
+		{ text: "關於我", ref: sectionRefs[0] },
+		{ text: "經歷", ref: sectionRefs[1] },
+		{ text: "個人專案", ref: sectionRefs[2] },
+		{ text: "趣味遊戲", ref: sectionRefs[3] },
+	];
 
-export default function Index() {
+	const contactIcons = [
+		{ icon: <MdOutlineEmail />, link: "mailto:lonely507487@gmail.com" },
+		{ icon: <IoLogoGithub />, link: "https://github.com/JOLIN-TSAI" },
+		{ icon: <FaCodepen />, link: "https://codepen.io/JOLIN-TSAI-the-bold" },
+	];
 	return (
 		<header className={`${Sty.headerAll} bg-info`}>
 			<div className="d-flex">
@@ -31,10 +37,11 @@ export default function Index() {
 			<nav className={Sty.nav}>
 				<ul className={Sty.navItems}>
 					{navItems.map((item, index) => (
-						<li key={index}>
-							<Link to={item.link} className={Sty.navLink}>
-								{item.text}
-							</Link>
+						<li
+							key={index}
+							onClick={() => scroll(item.ref)}
+							className={Sty.point}>
+							{item.text}
 						</li>
 					))}
 					<li className={Sty.contactItem}>
