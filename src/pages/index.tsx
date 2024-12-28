@@ -36,17 +36,23 @@ const HomePage = () => {
 					<InformationAddress />
 				</section>
 				<hr />
-				<section ref={sectionRefs[1]}>
+				<section
+					ref={sectionRefs[1]}
+					className={`${Sty.frontPage} container`}>
 					<ExperienceTimeline />
 				</section>
 
 				<hr />
-				<section ref={sectionRefs[2]}>
+				<section
+					ref={sectionRefs[2]}
+					className={`${Sty.frontPage} container`}>
 					<Project />
 				</section>
 
 				<hr />
-				<section ref={sectionRefs[3]}>
+				<section
+					ref={sectionRefs[3]}
+					className={`${Sty.frontPage} container`}>
 					<Games />
 				</section>
 			</div>
