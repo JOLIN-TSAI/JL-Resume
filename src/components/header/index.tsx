@@ -1,10 +1,10 @@
-// import React from "react";
-// import { Link } from "react-router-dom";
 import { RefObject } from "react";
 import Sty from "@/components/header/header.module.scss";
 import { IoLogoGithub } from "react-icons/io";
 import { FaCodepen } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
+import { FaCloudMoon } from "react-icons/fa";
+import { useBackgroundState } from "@/hooks/backgroundState";
 
 interface HeaderProps {
 	scroll: (ref: RefObject<HTMLElement>) => void;
@@ -24,6 +24,8 @@ export default function Index({ scroll, sectionRefs }: HeaderProps) {
 		{ icon: <IoLogoGithub />, link: "https://github.com/JOLIN-TSAI" },
 		{ icon: <FaCodepen />, link: "https://codepen.io/JOLIN-TSAI-the-bold" },
 	];
+	const { toggleMode } = useBackgroundState();
+
 	return (
 		<header className={`${Sty.headerAll} bg-info`}>
 			<div className="d-flex">
@@ -44,6 +46,7 @@ export default function Index({ scroll, sectionRefs }: HeaderProps) {
 							{item.text}
 						</li>
 					))}
+
 					<li className={Sty.contactItem}>
 						<span className={Sty.contactText}>聯繫我</span>
 						<div className={Sty.contactIcons}>
@@ -58,6 +61,14 @@ export default function Index({ scroll, sectionRefs }: HeaderProps) {
 								</a>
 							))}
 						</div>
+					</li>
+					<li className={Sty.Bgc}>
+						<FaCloudMoon
+							onClick={toggleMode}
+							style={{
+								cursor: "pointer",
+								fontSize: "26px",
+							}}></FaCloudMoon>
 					</li>
 				</ul>
 			</nav>
