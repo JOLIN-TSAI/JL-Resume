@@ -5,6 +5,7 @@ import InformationProjectsItem from "@/components/information/informationProject
 import InformationExperience from "@/components/information/informationExperience";
 import InformationAddress from "@/components/information/informationAddress";
 import ExperienceTimeline from "@/components/ExperienceTimeline/ExperienceTimeline";
+import AboutMe from "@/components/aboutMe";
 import Project from "@/components/project";
 import Games from "@/components/games";
 import Sty from "@/styles/index.module.scss";
@@ -34,6 +35,10 @@ const HomePage = () => {
 					<InformationProjectsItem />
 					<InformationExperience />
 					<InformationAddress />
+				</section>
+				<hr />
+				<section className={`${Sty.frontPage} container`}>
+					<AboutMe />
 				</section>
 				<hr />
 				<section

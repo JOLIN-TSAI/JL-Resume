@@ -1,0 +1,28 @@
+.all {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.tripAll {
+	width: 100%;
+	height: 300px;
+	position: relative;
+	.tripImageBox {
+		justify-content: space-between;
+		align-content: end;
+		padding: 0 88px;
+	}
+}
+
+.ImageBox {
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	border: 3px solid #000;
+	background-color: #fff;
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
