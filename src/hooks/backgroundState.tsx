@@ -19,8 +19,8 @@ export default function BackgroundState({ children }: Props) {
 			<BackgroundContext.Provider value={{ isDarkMode, toggleMode }}>
 				<div
 					style={{
-						backgroundColor: isDarkMode ? "#121212" : "#ffffff",
-						color: isDarkMode ? "#ffffff" : "#000000",
+						backgroundColor: isDarkMode ? "#ffffff" : "#203143",
+						color: isDarkMode ? "#000000" : "#ffffff",
 						minHeight: "100vh",
 						transition: "background-color 0.3s, color 0.3s",
 					}}>

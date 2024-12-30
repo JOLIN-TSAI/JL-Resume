@@ -24,16 +24,20 @@ export default function Index({ scroll, sectionRefs }: HeaderProps) {
 		{ icon: <IoLogoGithub />, link: "https://github.com/JOLIN-TSAI" },
 		{ icon: <FaCodepen />, link: "https://codepen.io/JOLIN-TSAI-the-bold" },
 	];
-	const { toggleMode } = useBackgroundState();
+	const { toggleMode, isDarkMode } = useBackgroundState();
 
 	return (
-		<header className={`${Sty.headerAll} bg-info`}>
+		<header className={Sty.headerAll}>
 			<div className="d-flex">
 				<div className={Sty.logoBox}>
-					<img src="/logo.png" alt="Logo" className={Sty.logo} />
+					<img
+						src={isDarkMode ? "/winnerBear.png" : "/sleepBear.png"}
+						alt="Logo"
+						className={Sty.logo}
+					/>
 				</div>
-				<p className="m-auto" style={{ color: "yellow" }}>
-					蔡依琳的個人履歷網站
+				<p className="m-auto" style={{ color: "#fdca30" }}>
+					JL-TSAI planet
 				</p>
 			</div>
 			<nav className={Sty.nav}>
