@@ -20,7 +20,7 @@ export default function InformationName() {
 						</div>
 					</div>
 					<div className={Sty.other}>
-						<p>畢業於： 實踐大學觀光管理學系</p>
+						<p>畢業： 實踐大學觀光管理學系</p>
 						<p>興趣：閱讀、健身、旅遊</p>
 						<p>左右銘：</p>
 					</div>

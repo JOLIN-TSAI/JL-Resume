@@ -15,6 +15,9 @@ export default function IntroductionBox({ children, size }: Props) {
 				borderRadius: "15%",
 				border: "1px solid gray",
 				boxShadow: " 2px 2px 10px yellow",
+				display: "flex",
+				flexDirection: "column",
+				justifyContent: "center",
 			}}>
 			{children}
 		</div>
