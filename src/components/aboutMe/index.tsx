@@ -1,122 +1,135 @@
+import React, { useState } from "react";
 import Sty from "@/components/aboutMe/index.module.scss";
 
-const trip = [
+interface Image {
+	id: number;
+	title: string;
+	src: string;
+	alt: string;
+}
+
+const trip: Image[] = [
 	{
 		id: 1,
-		title: "",
+		title: "In Taiwan",
 		src: "/aboutMe/Taiwan.jpg",
 		alt: "參加人生音樂祭的照片",
 	},
 	{
 		id: 2,
-		title: "",
+		title: "In Korea",
 		src: "/aboutMe/Korea.jpg",
 		alt: "去韓國的照片",
 	},
 	{
 		id: 3,
-		title: "",
+		title: "In Japan",
 		src: "/aboutMe/Japan.jpg",
 		alt: "去日本玩的照片",
 	},
 ];
 
-const TeamImage = [
+const team: Image[] = [
 	{
-		title: "",
+		id: 1,
+		title: "In Japan",
 		src: "/aboutMe/host.jpg",
 		alt: "當主持人的照片",
 	},
 	{
-		title: "",
+		id: 2,
+		title: "系上新生活動主持人合照",
 		src: "/aboutMe/team1.jpg",
-		alt: "系上新生活動主持照片",
+		alt: "系上新生活動主持人合照",
 	},
 	{
-		title: "",
-		src: "/aboutMe/team3.jpg",
+		id: 3,
+		title: "麥當勞分店比賽照片",
+		src: "/aboutMe/team2.jpg",
 		alt: "麥當勞分店比賽照片",
 	},
 	{
-		title: "",
-		src: "/aboutMe/team4.jpg",
-		alt: "台北國際旅展巡場組照片",
+		id: 4,
+		title: "台北國際旅展巡場組合照",
+		src: "/aboutMe/team3.jpg",
+		alt: "台北國際旅展巡場組合照",
 	},
 	{
-		title: "",
-		src: "/aboutMe/team5.jpg",
+		id: 5,
+		title: "系上招生面試合照",
+		src: "/aboutMe/team4.jpg",
 		alt: "系上招生面試合照",
 	},
 	{
-		title: "",
-		src: "/aboutMe/team6.jpg",
-		alt: "大學籃球社比賽合照",
+		id: 6,
+		title: "籃球系隊賽前合照",
+		src: "/aboutMe/team5.jpg",
+		alt: "籃球系隊賽前合照",
 	},
 ];
 
+const filteredTrip = trip.filter((_, index) => index !== 1);
+
+function ImageCard({ image }: { image: Image }) {
+	const [isFlipped, setIsFlipped] = useState(false);
+
+	return (
+		<div
+			className={`${Sty.ImageBox} ${isFlipped ? Sty.flip : ""}`}
+			onClick={() => setIsFlipped(!isFlipped)}>
+			<img className={Sty.FrontFace} src={image.src} alt={image.alt} />
+			<div className={Sty.backFace}>
+				<p>{image.title}</p>
+			</div>
+		</div>
+	);
+}
+
 export default function Index() {
 	return (
-		<>
-			<div className="container-fluid">
-				<div className={`row ${Sty.tripAll}`}>
-					<div
-						className={`col-6 gap-1 ${Sty.tripImageBox} ${Sty.all}`}>
-						{trip.map((image, index) => (
-							<div
-								key={index}
-								className={Sty.ImageBox}
-								style={{
-									position:
-										image.id === 2
-											? "absolute"
-											: "relative",
-									left: image.id === 2 ? "19%" : "auto",
-								}}>
-								<img src={image.src} alt={image.alt} />
-							</div>
+		<div className="container-fluid">
+			<div className="row">
+				<div className={`col-6 ${Sty.tripCard}`}>
+					<ImageCard image={trip[1]} />
+
+					<div className="d-flex justify-content-between">
+						{filteredTrip.map((image) => (
+							<ImageCard key={image.id} image={image} />
 						))}
 					</div>
-					<div className="col-6 my-auto">
-						Lorem ipsum dolor sit, amet consectetur adipisicing
-						elit. Et optio quos, voluptates ratione voluptate
-						soluta! Molestiae asperiores incidunt sint sunt sit,
-						enim commodi sed nobis! Enim consequuntur cupiditate
-						officiis nemo. Ullam debitis porro qui nisi libero vitae
-						assumenda dolores quo consectetur iusto, voluptatum
-						architecto eum, non minima repellat temporibus! Quidem
-						adipisci fuga corrupti deleniti id, iusto laborum
-						deserunt minima sequi! Error cupiditate ab ipsum
-						consequatur saepe qui, porro quasi itaque delectus
-						assumenda dolore nesciunt suscipit possimus numquam quis
-						veritatis velit totam esse enim necessitatibus cumque
-						tenetur doloremque? Cum, adipisci voluptatum?
-					</div>
+				</div>
+				<div className="col-6 my-auto">
+					<p className="m-0">
+						Hello！你好，我是蔡依琳，今年24歲，從實踐大學觀光管理學系畢業兩年了，曾任職於建設公司擔任工程專案秘書、教育補習屆的數位行銷企劃。而過去半年間(Jun
+						2024 - Nov
+						2024)，我在資展國際股份有限公司(原資策會)，全心專注於前端的進修中，
+					</p>
 				</div>
 			</div>
-			<div className="container-fluid" style={{}}>
-				<div className="row m-auto">
-					<h3>社團</h3>
-					<div className="col-7">
+			<div className="row">
+				<div className="col-sm-7 my-auto">
+					<p className="m-0">
 						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Consectetur asperiores dolore dolores tempora. Non velit
-						voluptates delectus reiciendis, ex alias inventore est?
-						Dolorem dolorum tempora reprehenderit, odit voluptates
-						molestias rerum. Eligendi vero velit expedita alias
-						repellat veniam error, ipsa facilis quia aut voluptatem
-						atque sunt architecto obcaecati sit tempora et
-						consectetur tenetur commodi eum incidunt qui aperiam
-						enim eveniet. Reprehenderit?
-					</div>
-					<div
-						className={`col-5 gap-2 justify-content-center ${Sty.all}`}>
-						{TeamImage.map((image, index) => (
-							<div key={index} className={Sty.ImageBox}>
-								<img src={image.src} alt={image.alt} />
-							</div>
-						))}
-					</div>
+						Dolores molestias id earum mollitia, in a, corrupti
+						laboriosam rerum vel, quisquam vero! Quod minima ratione
+						officiis. Porro doloremque quo fuga cumque. Quaerat
+						debitis, repellendus provident beatae, id hic doloremque
+						cumque voluptatem quam error omnis saepe harum incidunt
+						officia ducimus dicta nulla aliquam exercitationem
+						accusamus rerum, qui voluptate et unde delectus. Quidem.
+						Eligendi optio autem quam officiis deleniti a vel
+						suscipit. Neque illo placeat id, reprehenderit commodi
+						voluptates? Asperiores dolore impedit quibusdam nihil
+						ipsum! Quas sunt aliquam quae magnam blanditiis
+						voluptatum recusandae!
+					</p>
+				</div>
+				<div className={`col-sm-5 d-flex flex-wrap`}>
+					{team.map((image) => (
+						<ImageCard key={image.id} image={image} />
+					))}
 				</div>
 			</div>
-		</>
+		</div>
 	);
 }
