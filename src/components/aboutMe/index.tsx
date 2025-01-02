@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import Sty from "@/components/aboutMe/index.module.scss";
 
 interface Image {
@@ -71,12 +70,8 @@ const team: Image[] = [
 const filteredTrip = trip.filter((_, index) => index !== 1);
 
 function ImageCard({ image }: { image: Image }) {
-	const [isFlipped, setIsFlipped] = useState(false);
-
 	return (
-		<div
-			className={`${Sty.ImageBox} ${isFlipped ? Sty.flip : ""}`}
-			onClick={() => setIsFlipped(!isFlipped)}>
+		<div className={`${Sty.ImageBox}`}>
 			<img className={Sty.FrontFace} src={image.src} alt={image.alt} />
 			<div className={Sty.backFace}>
 				<p>{image.title}</p>
