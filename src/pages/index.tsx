@@ -25,43 +25,50 @@ const HomePage = () => {
 		}
 	};
 
-	return (
-		<>
-			<Header scroll={scrollToSection} sectionRefs={sectionRefs} />
-			<div className={`${Sty.all} container`}>
-				<section
-					className={`${Sty.frontPage} container`}
-					ref={sectionRefs[0]}>
+	const frontPage = `${Sty.frontPage} container`;
+
+	const sections = [
+		{
+			ref: sectionRefs[0],
+			components: (
+				<>
 					<InformationName />
 					<InformationProjectsItem />
 					<InformationExperience />
 					<InformationAddress />
-				</section>
-				<hr />
-				<section className={`${Sty.frontPage} container`}>
-					<AboutMe />
-				</section>
-				<hr />
-				<section
-					ref={sectionRefs[1]}
-					className={`${Sty.frontPage} container`}>
-					<ExperienceTimeline />
-				</section>
+				</>
+			),
+		},
+		{
+			ref: null,
+			components: <AboutMe />,
+		},
+		{
+			ref: sectionRefs[1],
+			components: <ExperienceTimeline />,
+		},
+		{
+			ref: sectionRefs[2],
+			components: <Project />,
+		},
+		{
+			ref: sectionRefs[3],
+			components: <Games />,
+		},
+	];
 
-				<hr />
-				<section
-					ref={sectionRefs[2]}
-					className={`${Sty.frontPage} container`}>
-					<Project />
-				</section>
+	return (
+		<>
+			<Header scroll={scrollToSection} sectionRefs={sectionRefs} />
 
-				<hr />
-				<section
-					ref={sectionRefs[3]}
-					className={`${Sty.frontPage} container`}>
-					<Games />
-				</section>
-			</div>
+			<main className={`${Sty.all} container`}>
+				{sections.map((item, index) => (
+					<section key={index} ref={item.ref} className={frontPage}>
+						{item.components}
+					</section>
+				))}
+			</main>
+
 			<Footer />
 		</>
 	);
