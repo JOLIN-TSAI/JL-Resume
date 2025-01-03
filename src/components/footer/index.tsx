@@ -24,10 +24,8 @@ export default function Index() {
 				height: "80px",
 				backgroundColor: "#47525d",
 			}}>
-			<div
-				className="d-flex m-auto flex-column"
-				style={{ width: "15%", height: "100%" }}>
-				<div className="d-flex">
+			<div className="d-flex flex-column w-100 h-100 overflow-hidden">
+				<div className="d-flex mx-auto gap-3 gap-xl-5">
 					{contactIcons.map((item, index) => (
 						<div key={index} className="m-auto">
 							<a
