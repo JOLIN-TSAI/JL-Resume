@@ -5,6 +5,7 @@
 	align-items: center;
 	margin: 0 15px;
 	gap: 5px;
+
 	.introduction {
 		padding: 20px;
 		border-radius: 15px;
@@ -13,24 +14,30 @@
 		justify-content: center;
 		align-items: center;
 		color: #434383;
+		opacity: 0;
+		transform: translateY(50px);
+		transition: opacity 0.8s ease, transform 0.8s ease;
 	}
+
 	.brand {
 		background-color: #c3e48f;
-		animation: slideLeft 1.5s ease-in-out;
-		p {
-			padding: 0 250px;
-		}
 	}
+
 	.skill {
 		width: 100%;
 		background-color: rgb(244, 200, 207);
-		animation: slideRight 1.5s ease-in-out;
+
 		.skillItems {
 			display: flex;
 			justify-content: center;
 			flex-wrap: wrap;
 			gap: 5px;
 		}
+	}
+
+	.visible {
+		opacity: 1;
+		transform: translateY(0);
 	}
 }
 
@@ -42,6 +49,7 @@
 	justify-content: center;
 	flex-wrap: wrap;
 	gap: 3%;
+
 	.items {
 		width: 30%;
 		height: 600px;
@@ -49,37 +57,23 @@
 		border: 1px dashed #e0f8b9;
 		border-radius: 15px;
 		overflow: hidden;
+
 		.decorate {
 			width: 15px;
 			height: 20px;
 			background-color: yellow;
 			padding-left: 3px;
 		}
+
 		.imageBox {
 			width: 100%;
 			height: 90%;
 		}
+
 		.image {
 			width: 100%;
 			height: 100%;
 			background-size: cover;
 		}
-	}
-}
-
-@keyframes slideLeft {
-	from {
-		transform: translateX(-180%);
-	}
-	to {
-		transform: translateX(0px);
-	}
-}
-@keyframes slideRight {
-	from {
-		transform: translateX(180%);
-	}
-	to {
-		transform: translateX(0px);
 	}
 }

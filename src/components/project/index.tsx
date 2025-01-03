@@ -1,7 +1,12 @@
 import Sty from "@/components/project/project.module.scss";
 import { useBackgroundState } from "@/hooks/backgroundState";
+import { useEffect, useRef } from "react";
+
 export default function Project() {
 	const { isDarkMode } = useBackgroundState();
+	const brandRef = useRef<HTMLDivElement>(null);
+	const skillRef = useRef<HTMLDivElement>(null);
+
 	const shops = [
 		{
 			id: "1",
@@ -34,6 +39,7 @@ export default function Project() {
 			url: "/project/sweetyTime/shopBackstage-detail.png",
 		},
 	];
+
 	const skills = [
 		{ title: "HTML", url: "/project/sweetyTime/skills/HTML.png" },
 		{ title: "CSS", url: "/project/sweetyTime/skills/CSS.png" },
@@ -57,6 +63,28 @@ export default function Project() {
 		{ title: "MySQL", url: "/project/sweetyTime/skills/MySQL.png" },
 	];
 
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add(Sty.visible);
+					} else {
+						entry.target.classList.remove(Sty.visible);
+					}
+				});
+			},
+			{ threshold: 0.1 }
+		);
+
+		if (brandRef.current) observer.observe(brandRef.current);
+		if (skillRef.current) observer.observe(skillRef.current);
+
+		return () => {
+			observer.disconnect();
+		};
+	}, []);
+
 	return (
 		<>
 			<div className={Sty.all}>
@@ -69,16 +97,20 @@ export default function Project() {
 					SweetyTime甜覓食光
 				</h2>
 
-				<div className={`${Sty.brand} ${Sty.introduction}`}>
+				<div
+					ref={brandRef}
+					className={`${Sty.brand} ${Sty.introduction}`}>
 					<h4>品牌簡介</h4>
 					<p>
 						甜覓食光SweetyTime是一個
-						<strong>專注於甜點的綜合平台</strong>，
-						致力於為消費者提供一站式的甜點購物體驗。
+						<strong>專注於甜點的綜合平台</strong>
+						，致力於為消費者提供一站式的甜點購物體驗。
 						我們匯集眾多優質甜點店家，讓消費者能輕鬆探索與選擇心儀的甜品，無論購物還是學習甜點製作，都能在這裡享受甜蜜時光。填補了現今電商平台中對甜點領域關注的空白。
 					</p>
 				</div>
-				<div className={`${Sty.skill} ${Sty.introduction}`}>
+				<div
+					ref={skillRef}
+					className={`${Sty.skill} ${Sty.introduction}`}>
 					<h4>使用技術</h4>
 					<div className={Sty.skillItems}>
 						{skills.map((skill, index) => (
