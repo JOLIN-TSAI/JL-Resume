@@ -12,9 +12,11 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		color: #434383;
 	}
 	.brand {
 		background-color: #c3e48f;
+		animation: slideLeft 1.5s ease-in-out;
 		p {
 			padding: 0 250px;
 		}
@@ -22,12 +24,12 @@
 	.skill {
 		width: 100%;
 		background-color: rgb(244, 200, 207);
+		animation: slideRight 1.5s ease-in-out;
 		.skillItems {
 			display: flex;
 			justify-content: center;
 			flex-wrap: wrap;
 			gap: 5px;
-			border: 1px solid #aaa;
 		}
 	}
 }
@@ -62,5 +64,22 @@
 			height: 100%;
 			background-size: cover;
 		}
+	}
+}
+
+@keyframes slideLeft {
+	from {
+		transform: translateX(-180%);
+	}
+	to {
+		transform: translateX(0px);
+	}
+}
+@keyframes slideRight {
+	from {
+		transform: translateX(180%);
+	}
+	to {
+		transform: translateX(0px);
 	}
 }

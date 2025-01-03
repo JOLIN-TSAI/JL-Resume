@@ -1,5 +1,7 @@
 import Sty from "@/components/project/project.module.scss";
+import { useBackgroundState } from "@/hooks/backgroundState";
 export default function Project() {
+	const { isDarkMode } = useBackgroundState();
 	const shops = [
 		{
 			id: "1",
@@ -58,7 +60,15 @@ export default function Project() {
 	return (
 		<>
 			<div className={Sty.all}>
-				<h2>SweetyTime甜覓時光</h2>
+				<h2
+					style={{
+						textShadow: isDarkMode
+							? "3px 3px 30px #434383"
+							: "3px 3px 30px yellow",
+					}}>
+					SweetyTime甜覓食光
+				</h2>
+
 				<div className={`${Sty.brand} ${Sty.introduction}`}>
 					<h4>品牌簡介</h4>
 					<p>
