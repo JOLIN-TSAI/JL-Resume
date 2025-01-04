@@ -4,7 +4,7 @@ import Sty from "@/components/information/informationName.module.scss";
 export default function InformationName() {
 	return (
 		<>
-			<IntroductionBox size={360}>
+			<IntroductionBox sizeWidth={360} sizeHeight={360}>
 				<div className="d-flex flex-column gap-3">
 					<div className="d-flex w-100">
 						<div className={`${Sty.photoBox} w-50`}>

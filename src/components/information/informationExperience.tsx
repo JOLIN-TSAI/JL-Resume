@@ -49,7 +49,7 @@ export default function InformationExperience() {
 	};
 	return (
 		<>
-			<IntroductionBox size={360}>
+			<IntroductionBox sizeWidth={360} sizeHeight={360}>
 				<div className={Sty.all}>
 					<div className={Sty.top}>
 						<h3>工作經歷</h3>

@@ -4,17 +4,17 @@ import Sty from "@/components/information/informationProject.module.scss";
 export default function InformationProjectsItem() {
 	return (
 		<>
-			<IntroductionBox size={360}>
+			<IntroductionBox sizeWidth={360} sizeHeight={360}>
 				<div className="d-flex">
-					<IntroductionBox size={120}>
+					<IntroductionBox sizeWidth={110} sizeHeight={100}>
 						<h6>團隊專案:</h6>
 						<p className={Sty.number}>1</p>
 					</IntroductionBox>
-					<IntroductionBox size={120}>
+					<IntroductionBox sizeWidth={110} sizeHeight={100}>
 						<h6>趣味遊戲:</h6>
 						<p className={Sty.number}>4</p>
 					</IntroductionBox>
-					<IntroductionBox size={120}>
+					<IntroductionBox sizeWidth={110} sizeHeight={100}>
 						<h6>入坑時數</h6>
 						<p className={Sty.number}>？</p>
 					</IntroductionBox>

@@ -4,6 +4,8 @@ import InformationName from "@/components/information/informationName";
 import InformationProjectsItem from "@/components/information/informationProjectsItem";
 import InformationExperience from "@/components/information/informationExperience";
 import InformationAddress from "@/components/information/informationAddress";
+import InformationFrontSkill from "@/components/information/informationSkills/informationFrontSkill";
+import InformationBackSkill from "@/components/information/informationSkills/informationBackSkill";
 import ExperienceTimeline from "@/components/ExperienceTimeline/ExperienceTimeline";
 import Footer from "@/components/footer";
 import AboutMe from "@/components/aboutMe";
@@ -36,6 +38,8 @@ const HomePage = () => {
 					<InformationProjectsItem />
 					<InformationExperience />
 					<InformationAddress />
+					<InformationFrontSkill />
+					<InformationBackSkill />
 				</>
 			),
 		},

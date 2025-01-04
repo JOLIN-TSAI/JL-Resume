@@ -2,15 +2,20 @@ import React from "react";
 
 interface Props {
 	children: React.ReactNode;
-	size: number;
+	sizeWidth: number;
+	sizeHeight: number;
 }
 
-export default function IntroductionBox({ children, size }: Props) {
+export default function IntroductionBox({
+	children,
+	sizeWidth,
+	sizeHeight,
+}: Props) {
 	return (
 		<div
 			style={{
-				width: size,
-				height: size,
+				width: sizeWidth,
+				height: sizeHeight,
 				padding: "15px",
 				borderRadius: "15%",
 				border: "1px solid gray",

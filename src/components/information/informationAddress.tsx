@@ -10,7 +10,7 @@ export default function InformationExperience() {
 
 	return (
 		<>
-			<IntroductionBox size={360}>
+			<IntroductionBox sizeWidth={360} sizeHeight={360}>
 				<div className="w-100 h-100 d-flex flex-column gap-3 my-3">
 					<WeatherTable weatherData={weatherData} />
 					<div
