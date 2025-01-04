@@ -4,7 +4,9 @@ import { frontSkillBlocks } from "./SkillData"; // 引入技能資料
 
 export default function InformationFrontSkill() {
 	return (
-		<div className="d-flex flex-wrap gap-2" style={{ width: "370px" }}>
+		<div
+			className="d-flex flex-wrap gap-2 justify-content-center"
+			style={{ width: "360px" }}>
 			{frontSkillBlocks.map((block, index) => (
 				<InformationBox
 					key={index}

@@ -23,10 +23,10 @@ export default function InformationExperience() {
 			name: "mygreat承勁實業有限公司",
 			title: "工程專案秘書 ",
 			responsibility: [
-				"負責案件的空間與環境丈量及查核。",
+				"負責案件的空間與環境丈量查核。",
 				"審查業務設計師的色樣配置圖。",
 				"主持行前會議並安排施工放樣。",
-				"制作工程進度報告，維護完成項目。",
+				"工程進度報告，維護完成項目。",
 				"密切聯繫業主，快速解答疑問與處理臨時變更。",
 			],
 		},
@@ -50,34 +50,36 @@ export default function InformationExperience() {
 	return (
 		<>
 			<IntroductionBox sizeWidth={360} sizeHeight={360}>
-				<div className={Sty.all}>
-					<div className={Sty.top}>
-						<h3>工作經歷</h3>
-						<FaArrowCircleRight
-							className={`my-auto ${Sty.iconBtn}`}
-							onClick={handleNext}
-						/>
-					</div>
-					<div className={Sty.content}>
-						<div>
-							<h4>{experience[changeContent].name}</h4>
-							<h4>{experience[changeContent].title}</h4>
+				<div className="w-100 h-100">
+					<div className={Sty.all}>
+						<div className={Sty.top}>
+							<h3>工作經歷</h3>
+							<FaArrowCircleRight
+								className={`my-auto ${Sty.iconBtn}`}
+								onClick={handleNext}
+							/>
 						</div>
-						<ul>
-							{experience[changeContent].responsibility.map(
-								(task, taskIndex) => (
-									<li key={taskIndex}>{task}</li>
-								)
-							)}
-						</ul>
+						<div className={Sty.content}>
+							<div>
+								<h4>{experience[changeContent].name}</h4>
+								<h4>{experience[changeContent].title}</h4>
+							</div>
+							<ul>
+								{experience[changeContent].responsibility.map(
+									(task, taskIndex) => (
+										<li key={taskIndex}>{task}</li>
+									)
+								)}
+							</ul>
+						</div>
 					</div>
 					<div className={Sty.indicatorsCircle}>
 						{experience.map((_, index) => (
 							<span key={index}>
 								{changeContent === index ? (
-									<FaCircle />
+									<FaCircle fontSize={10} />
 								) : (
-									<FaRegCircle />
+									<FaRegCircle fontSize={10} />
 								)}
 							</span>
 						))}

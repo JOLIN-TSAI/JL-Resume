@@ -6,7 +6,9 @@ import InformationBox from "@/components/information/introductionBox";
 export default function InformationBackSkill() {
 	return (
 		<>
-			<div className="d-flex flex-wrap gap-2" style={{ width: "370px" }}>
+			<div
+				className="d-flex flex-wrap gap-2 justify-content-center"
+				style={{ width: "360px" }}>
 				{backSkillBlocks.map((block, index) => (
 					<InformationBox
 						key={index}

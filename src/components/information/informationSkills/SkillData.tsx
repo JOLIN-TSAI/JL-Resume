@@ -2,8 +2,8 @@
 export const frontSkillBlocks = [
 	{
 		title: "樣式與佈局",
-		content: ["CSS/SCSS/SASS", "Bootstrap 5", "Canvas", "Media Query/RWD"],
-		sizeWidth: 200,
+		content: ["CSS/SCSS/SASS", "Bootstrap 5", "Canvas", "MediaQuery/RWD"],
+		sizeWidth: 185,
 		sizeHeight: 180,
 		titlePosition: { left: "calc(50% - 35%)" },
 		style: {},
@@ -11,9 +11,9 @@ export const frontSkillBlocks = [
 	{
 		title: "JavaScript",
 		content: ["ES6 語法", "TypeScript", "Restful API"],
-		sizeWidth: 160,
+		sizeWidth: 155,
 		sizeHeight: 150,
-		titlePosition: { left: "calc(50% - 43%)" },
+		titlePosition: { left: "calc(50% - 45%)" },
 		style: {},
 	},
 	{
@@ -26,7 +26,7 @@ export const frontSkillBlocks = [
 			"Hooks（useState、useEffect...）",
 			"Next.js",
 		],
-		sizeWidth: 360,
+		sizeWidth: 350,
 		sizeHeight: 160,
 		titlePosition: { right: "0" },
 		style: { margin: "15px 0 0 0" },
@@ -37,7 +37,7 @@ export const backSkillBlocks = [
 	{
 		title: "後端基礎",
 		content: ["Node.js", "Express.js", "RESTful API", "MySQL"],
-		sizeWidth: 200,
+		sizeWidth: 185,
 		sizeHeight: 180,
 		titlePosition: { left: "calc(50% - 30%)" },
 		style: {},
@@ -45,9 +45,9 @@ export const backSkillBlocks = [
 	{
 		title: "其他工具",
 		content: ["Postman", "Git/Github", "Git flow"],
-		sizeWidth: 160,
+		sizeWidth: 155,
 		sizeHeight: 150,
-		titlePosition: { left: "calc(50% - 35%)" },
+		titlePosition: { left: "calc(50% - 40%)" },
 		style: {},
 	},
 	{
@@ -57,7 +57,7 @@ export const backSkillBlocks = [
 			"Figma（UI/UX 設計）",
 			"Adobe Photoshop",
 		],
-		sizeWidth: 360,
+		sizeWidth: 350,
 		sizeHeight: 160,
 		titlePosition: { left: "calc(50% - 15%)" },
 		style: { margin: "5px 0 0 0" },
