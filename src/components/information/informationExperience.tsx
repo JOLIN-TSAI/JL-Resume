@@ -1,6 +1,6 @@
 import IntroductionBox from "@/components/information/introductionBox";
-import { FaArrowCircleRight } from "react-icons/fa";
 import Sty from "@/components/information/informationExperience.module.scss";
+import { FaArrowCircleRight, FaRegCircle, FaCircle } from "react-icons/fa";
 import { useState } from "react";
 
 export default function InformationExperience() {
@@ -17,17 +17,6 @@ export default function InformationExperience() {
 				"直播活動企劃與主持。",
 				"SEO內容優化與流量提升。",
 				"數位廣告投放與效益提升。",
-			],
-		},
-		{
-			name: "mygreat承勁實業有限公司",
-			title: "工程專案秘書 ",
-			responsibility: [
-				"負責案件的空間與環境丈量及查核。",
-				"審查業務設計師的色樣配置圖。",
-				"主持行前會議並安排施工放樣。",
-				"制作工程進度報告，維護完成項目。",
-				"密切聯繫業主，快速解答疑問與處理臨時變更。",
 			],
 		},
 		{
@@ -81,6 +70,17 @@ export default function InformationExperience() {
 								)
 							)}
 						</ul>
+					</div>
+					<div className={Sty.indicatorsCircle}>
+						{experience.map((_, index) => (
+							<span key={index}>
+								{changeContent === index ? (
+									<FaCircle />
+								) : (
+									<FaRegCircle />
+								)}
+							</span>
+						))}
 					</div>
 				</div>
 			</IntroductionBox>
