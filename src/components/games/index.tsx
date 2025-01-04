@@ -1,6 +1,10 @@
+import React, { useRef } from "react";
 import GamesBox from "@/components/games/gameBox";
+import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 
 export default function GameBox() {
+	const containerRef = useRef<HTMLDivElement>(null);
+
 	const games = [
 		{
 			name: "翻牌卡記憶遊戲",
@@ -23,21 +27,50 @@ export default function GameBox() {
 			img: "/games/ultimatePassword.png",
 		},
 	];
+
+	// 容器樣式
+	const containerStyle: React.CSSProperties = {
+		display: "flex",
+		overflow: "auto",
+		gap: "16px",
+		padding: "16px",
+		scrollSnapType: "x mandatory",
+		scrollbarWidth: "none",
+		msOverflowStyle: "none",
+	};
+
+	// 卡片樣式
+	const cardStyle: React.CSSProperties = {
+		scrollSnapAlign: "start",
+		width: "300px",
+		height: "300px",
+		backgroundColor: "#f9f9f9",
+	};
+
 	return (
-		<>
-			<h2 style={{ margin: "0 auto" }}>趣味遊戲sideProject</h2>
-			<div className="d-flex gap-2 p-3">
-				{games.map((game, index) => {
-					return (
+		<div style={{ position: "relative", overflow: "hidden" }}>
+			<h2 style={{ margin: "0 auto", textAlign: "center" }}>
+				趣味遊戲 Side Project
+			</h2>
+			<div ref={containerRef} style={containerStyle}>
+				{games.map((game, index) => (
+					<div key={index} style={cardStyle}>
 						<GamesBox
-							key={index}
 							name={game.name}
 							url={game.url}
 							img={game.img}
 						/>
-					);
-				})}
+					</div>
+				))}
 			</div>
-		</>
+
+			{/* 左右箭頭（裝飾用） */}
+			<div style={{ position: "absolute", left: "10%", top: "50%" }}>
+				<FaArrowLeft size={30} color="#ccc" />
+			</div>
+			<div style={{ position: "absolute", right: "10%", top: "50%" }}>
+				<FaArrowRight size={30} color="#ccc" />
+			</div>
+		</div>
 	);
 }
