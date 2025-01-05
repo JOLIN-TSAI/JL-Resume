@@ -29,6 +29,10 @@ export default function WeatherTable({ weatherData }: WeatherTableProps) {
 	const maxTemp = getWeatherParameter("MaxT");
 	const weatherImage = weatherImageMapping[weatherWx] || "/loading.png";
 
+	const Sty = {
+		border: "1px solid #ddd",
+		padding: "2px",
+	};
 	return (
 		<div>
 			<div className="d-flex flex-row justify-content-between">
@@ -62,41 +66,11 @@ export default function WeatherTable({ weatherData }: WeatherTableProps) {
 				</thead>
 				<tbody>
 					<tr>
-						<td
-							style={{
-								border: "1px solid #ddd",
-								padding: "8px",
-							}}>
-							{weatherData.locationName}
-						</td>
-						<td
-							style={{
-								border: "1px solid #ddd",
-								padding: "8px",
-							}}>
-							{weatherWx}
-						</td>
-						<td
-							style={{
-								border: "1px solid #ddd",
-								padding: "8px",
-							}}>
-							{pop}%
-						</td>
-						<td
-							style={{
-								border: "1px solid #ddd",
-								padding: "8px",
-							}}>
-							{minTemp}°C
-						</td>
-						<td
-							style={{
-								border: "1px solid #ddd",
-								padding: "8px",
-							}}>
-							{maxTemp}°C
-						</td>
+						<td style={Sty}>{weatherData.locationName}</td>
+						<td style={Sty}>{weatherWx}</td>
+						<td style={Sty}>{pop}%</td>
+						<td style={Sty}>{minTemp}°C</td>
+						<td style={Sty}>{maxTemp}°C</td>
 					</tr>
 				</tbody>
 			</table>

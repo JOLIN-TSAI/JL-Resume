@@ -11,14 +11,14 @@ export default function InformationExperience() {
 	return (
 		<>
 			<IntroductionBox sizeWidth={360} sizeHeight={360}>
-				<div className="w-100 h-100 d-flex flex-column my-3">
-					<div style={{ height: "50%" }}>
+				<div className="w-100 h-100 d-flex flex-column my-2 gap-3 justify-content-between">
+					<div style={{ width: "100%", height: "40%" }}>
 						<WeatherTable weatherData={weatherData} />
 					</div>
 					<div
 						style={{
 							width: "100%",
-							height: "50%",
+							height: "100%",
 							display: "flex",
 							flexDirection: "column",
 							justifyContent: "space-between",

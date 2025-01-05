@@ -36,7 +36,7 @@ export default function Index() {
 				.to("#rocket", { x: "-350%", y: "200%", duration: 1.5 })
 				.to("#spaceship", { x: "50%", duration: 1 })
 				.to("#spaceship", { y: "50%", duration: 1 })
-				.to("#airplane", { x: "500%", duration: 1.5 }, "-=2.5");
+				.to("#airplane", { x: "500%", duration: 3 }, "-=2.5");
 		}
 	}, [isOpen, animationState]);
 
