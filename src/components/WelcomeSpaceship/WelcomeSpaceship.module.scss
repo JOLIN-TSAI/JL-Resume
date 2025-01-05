@@ -24,25 +24,43 @@
 		opacity: 0;
 	}
 }
-
-.popup-spaceship {
+.popup-spaceship,
+.popup-rocket,
+.popup-airplane {
 	position: absolute;
+}
+.popup-spaceship {
 	left: 0;
 	top: -10px;
 	width: 50vw;
 	height: 50vh;
 }
 .popup-rocket {
-	position: absolute;
 	top: -50px;
 	right: -50%;
 	width: 50vw;
 	height: 50vh;
 	transform-origin: center;
 }
+.popup-airplane {
+	bottom: 100px;
+	left: -500px;
+	width: 30vw;
+	height: 30vh;
+}
 
 .popup-image {
 	width: 100%;
 	height: 100%;
 	object-fit: contain;
+}
+
+@media screen and (max-width: 768px) {
+	.popup-airplane {
+		position: absolute;
+		bottom: 100px;
+		left: -150px;
+		width: 30vw;
+		height: 30vh;
+	}
 }

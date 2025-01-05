@@ -35,7 +35,8 @@ export default function Index() {
 				.to("#rocket", { x: "-100%", duration: 1.5, rotation: 230 })
 				.to("#rocket", { x: "-350%", y: "200%", duration: 1.5 })
 				.to("#spaceship", { x: "50%", duration: 1 })
-				.to("#spaceship", { y: "50%", duration: 1 });
+				.to("#spaceship", { y: "50%", duration: 1 })
+				.to("#airplane", { x: "500%", duration: 1.5 }, "-=2.5");
 		}
 	}, [isOpen, animationState]);
 
@@ -87,6 +88,13 @@ export default function Index() {
 			<div id="rocket" className={Sty["popup-rocket"]}>
 				<img
 					src="/WelcomeSpaceship/rocket.png"
+					alt="rocket.image"
+					className={Sty["popup-image"]}
+				/>
+			</div>
+			<div id="airplane" className={Sty["popup-airplane"]}>
+				<img
+					src="/WelcomeSpaceship/airplane.png"
 					alt="rocket.image"
 					className={Sty["popup-image"]}
 				/>
