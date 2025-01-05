@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import Sty from "./WelcomeSpaceship.module.scss";
+import gsap from "gsap";
 
 export default function Index() {
 	const [isOpen, setIsOpen] = useState(true); //彈窗是否開啟
@@ -22,6 +23,11 @@ export default function Index() {
 			setIsOpen(false);
 		}, 2000);
 	}, [animationState]);
+
+	const animationShip = gsap.timeline({
+		defaults: { ease: "sine.inOut", duration: 1 },
+	});
+	animationShip.to("#spaceship", { y: "50%" }).to("#spaceship", { x: "50%" });
 
 	useEffect(() => {
 		let interval: NodeJS.Timeout | null = null;
@@ -61,7 +67,7 @@ export default function Index() {
 			onKeyDown={(e) => {
 				if (e.key === "Enter" || e.key === "Escape") handleClose();
 			}}>
-			<div className={Sty["popup-container"]}>
+			<div id="spaceship" className={Sty["popup-container"]}>
 				<img
 					src={images[currentImageIndex]}
 					alt=""
