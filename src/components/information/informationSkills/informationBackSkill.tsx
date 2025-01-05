@@ -2,13 +2,22 @@
 import SkillBlock from "./SkillBlock";
 import { backSkillBlocks } from "./SkillData";
 import InformationBox from "@/components/information/introductionBox";
+import Title from "./title";
 
 export default function InformationBackSkill() {
 	return (
 		<>
 			<div
 				className="d-flex flex-wrap gap-2 justify-content-center"
-				style={{ width: "360px" }}>
+				style={{ width: "360px", position: "relative" }}>
+				<div
+					style={{
+						position: "absolute",
+						top: "150px",
+						right: "10px",
+					}}>
+					<Title content="後端與其他技術" />
+				</div>
 				{backSkillBlocks.map((block, index) => (
 					<InformationBox
 						key={index}
