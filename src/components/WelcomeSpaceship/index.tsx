@@ -24,10 +24,20 @@ export default function Index() {
 		}, 2000);
 	}, [animationState]);
 
-	const animationShip = gsap.timeline({
-		defaults: { ease: "sine.inOut", duration: 1 },
-	});
-	animationShip.to("#spaceship", { y: "50%" }).to("#spaceship", { x: "50%" });
+	// GSAP 動畫
+	useEffect(() => {
+		if (isOpen && animationState === "entered") {
+			const animationShip = gsap.timeline({
+				defaults: { ease: "power1.inOut" },
+			});
+
+			animationShip
+				.to("#rocket", { x: "-100%", duration: 1.5, rotation: 230 })
+				.to("#rocket", { x: "-350%", y: "200%", duration: 1.5 })
+				.to("#spaceship", { x: "50%", duration: 1 })
+				.to("#spaceship", { y: "50%", duration: 1 });
+		}
+	}, [isOpen, animationState]);
 
 	useEffect(() => {
 		let interval: NodeJS.Timeout | null = null;
@@ -67,10 +77,17 @@ export default function Index() {
 			onKeyDown={(e) => {
 				if (e.key === "Enter" || e.key === "Escape") handleClose();
 			}}>
-			<div id="spaceship" className={Sty["popup-container"]}>
+			<div id="spaceship" className={Sty["popup-spaceship"]}>
 				<img
 					src={images[currentImageIndex]}
-					alt=""
+					alt="spaceship.image"
+					className={Sty["popup-image"]}
+				/>
+			</div>
+			<div id="rocket" className={Sty["popup-rocket"]}>
+				<img
+					src="/WelcomeSpaceship/rocket.png"
+					alt="rocket.image"
 					className={Sty["popup-image"]}
 				/>
 			</div>
