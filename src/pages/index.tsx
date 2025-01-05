@@ -6,6 +6,7 @@ import InformationExperience from "@/components/information/informationExperienc
 import InformationAddress from "@/components/information/informationAddress";
 import InformationFrontSkill from "@/components/information/informationSkills/informationFrontSkill";
 import InformationBackSkill from "@/components/information/informationSkills/informationBackSkill";
+import WelcomeSpaceship from "@/components/WelcomeSpaceship";
 import ExperienceTimeline from "@/components/ExperienceTimeline/ExperienceTimeline";
 import Footer from "@/components/footer";
 import AboutMe from "@/components/aboutMe";
@@ -63,6 +64,7 @@ const HomePage = () => {
 
 	return (
 		<>
+			<WelcomeSpaceship />
 			<Header scroll={scrollToSection} sectionRefs={sectionRefs} />
 
 			<main className={`${Sty.all} container`}>
