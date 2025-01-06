@@ -20,6 +20,7 @@ const HomePage = () => {
 		useRef<HTMLElement>(null),
 		useRef<HTMLElement>(null),
 		useRef<HTMLElement>(null),
+		useRef<HTMLElement>(null),
 	];
 
 	const scrollToSection = (ref: RefObject<HTMLElement>) => {
@@ -36,7 +37,7 @@ const HomePage = () => {
 			components: (
 				<>
 					<div
-						className={`${Sty.frontPage} py-4 position-relative container`}>
+						className={`${Sty.frontPage} p-0 position-relative container`}>
 						<InformationName />
 						<InformationProjectsItem />
 						<InformationExperience />
@@ -53,23 +54,23 @@ const HomePage = () => {
 			),
 		},
 		{
-			ref: null,
+			ref: sectionRefs[1],
 			components: <AboutMe />,
 		},
 		{
-			ref: sectionRefs[1],
+			ref: sectionRefs[2],
 			components: <ExperienceTimeline />,
 		},
 		{
-			ref: sectionRefs[2],
+			ref: sectionRefs[3],
 			components: (
-				<div className="container">
+				<div className="container" style={{ paddingTop: "50px" }}>
 					<Project />
 				</div>
 			),
 		},
 		{
-			ref: sectionRefs[3],
+			ref: sectionRefs[4],
 			components: <Games />,
 		},
 	];
