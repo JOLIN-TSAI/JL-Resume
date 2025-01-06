@@ -35,12 +35,19 @@ const HomePage = () => {
 			ref: sectionRefs[0],
 			components: (
 				<>
-					<InformationName />
-					<InformationProjectsItem />
-					<InformationExperience />
-					<InformationAddress />
-					<InformationFrontSkill />
-					<InformationBackSkill />
+					<div className={`${Sty.frontPage} py-4 position-relative`}>
+						<InformationName />
+						<InformationProjectsItem />
+						<InformationExperience />
+						<InformationAddress />
+						<InformationFrontSkill />
+						<InformationBackSkill />
+					</div>
+					<img
+						src="/blob.gif"
+						alt=""
+						className={`${Sty.blobImage} position-absolute`}
+					/>
 				</>
 			),
 		},
