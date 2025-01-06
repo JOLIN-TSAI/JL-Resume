@@ -1,4 +1,5 @@
 import Sty from "@/components/aboutMe/index.module.scss";
+import { useEffect, useState } from "react";
 
 interface Image {
 	id: number;
@@ -67,38 +68,33 @@ const team: Image[] = [
 	},
 ];
 
-function ImageCard({
-	image,
-	wid,
-	hei,
-}: {
-	image: Image;
-	wid?: number;
-	hei?: number;
-}) {
-	return (
-		<div className={`${Sty.ImageBox}`} style={{ width: wid, height: hei }}>
-			<img className={Sty.FrontFace} src={image.src} alt={image.alt} />
-			<div className={Sty.backFace}>
-				<p>{image.title}</p>
-			</div>
-		</div>
-	);
-}
-
 export default function Index() {
+	const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setCurrentImageIndex((prevIndex) => (prevIndex + 1) % trip.length);
+		}, 5000);
+
+		return () => {
+			clearInterval(interval);
+		};
+	}, []);
+
 	return (
 		<div className={`container-fluid py-5 ${Sty.all}`}>
 			<div className={`row ${Sty.content}`}>
-				<div className="col-6 d-flex">
-					{trip.map((image) => (
-						<ImageCard
-							key={image.id}
-							image={image}
-							wid={280}
-							hei={450}
+				<div className="col-6 d-flex flex-wrap p-0">
+					<div className={Sty.tripBox}>
+						<img
+							className={Sty.FrontFace}
+							src={trip[currentImageIndex].src}
+							alt={trip[currentImageIndex].alt}
 						/>
-					))}
+						<div className={Sty.backFace}>
+							<p>{trip[currentImageIndex].title}</p>
+						</div>
+					</div>
 				</div>
 				<div className="col-6 my-auto">
 					<p className="m-0">
@@ -109,7 +105,7 @@ export default function Index() {
 				</div>
 			</div>
 			<div className={`row ${Sty.content}`}>
-				<div className="col-sm-7 my-auto">
+				<div className="col-7 my-auto">
 					<p className="m-0">
 						Lorem ipsum dolor sit amet consectetur adipisicing elit.
 						Dolores molestias id earum mollitia, in a, corrupti
@@ -126,14 +122,18 @@ export default function Index() {
 						voluptatum recusandae!
 					</p>
 				</div>
-				<div className={`col-sm-5 d-flex flex-wrap`}>
-					{team.map((image) => (
-						<ImageCard
-							key={image.id}
-							image={image}
-							wid={150}
-							hei={150}
-						/>
+				<div className={`col-5 d-flex flex-wrap`}>
+					{team.map((image, index) => (
+						<div key={index} className={Sty.teamBox}>
+							<img
+								className={Sty.FrontFace}
+								src={image.src}
+								alt={image.alt}
+							/>
+							<div className={Sty.backFace}>
+								<p>{image.title}</p>
+							</div>
+						</div>
 					))}
 				</div>
 			</div>

@@ -46,7 +46,7 @@ const HomePage = () => {
 					</div>
 					<img
 						src="/blob.gif"
-						alt=""
+						alt="backgroundImage"
 						className={`${Sty.blobImage} position-absolute`}
 					/>
 				</>

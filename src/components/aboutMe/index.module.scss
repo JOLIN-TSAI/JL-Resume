@@ -19,8 +19,8 @@
 	z-index: -1;
 }
 
-.ImageBox {
-	margin: 10px auto;
+.tripBox,
+.teamBox {
 	position: relative;
 	transform-style: preserve-3d;
 	transition: transform 0.5s;
@@ -42,5 +42,39 @@
 
 	.backFace {
 		transform: rotateY(180deg);
+	}
+}
+
+.tripBox {
+	width: 30rem;
+	height: 40rem;
+}
+
+.teamBox {
+	margin: 2% auto;
+	width: 12rem;
+	height: 12rem;
+}
+
+.tripBox {
+	margin: 0 auto;
+	width: 430px;
+	height: 500px;
+}
+
+.teamBox {
+	margin: 2% auto;
+	width: 150px;
+	height: 150px;
+}
+
+@media screen and (max-width: 480px) {
+	.tripBox {
+		width: 280px;
+		height: 450px;
+	}
+	.teamBox {
+		width: 50px;
+		height: 50px;
 	}
 }
