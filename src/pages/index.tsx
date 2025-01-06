@@ -28,14 +28,15 @@ const HomePage = () => {
 		}
 	};
 
-	const frontPage = `${Sty.frontPage} container`;
+	const frontPage = `${Sty.frontPage}`;
 
 	const sections = [
 		{
 			ref: sectionRefs[0],
 			components: (
 				<>
-					<div className={`${Sty.frontPage} py-4 position-relative`}>
+					<div
+						className={`${Sty.frontPage} py-4 position-relative container`}>
 						<InformationName />
 						<InformationProjectsItem />
 						<InformationExperience />
@@ -61,7 +62,11 @@ const HomePage = () => {
 		},
 		{
 			ref: sectionRefs[2],
-			components: <Project />,
+			components: (
+				<div className="container">
+					<Project />
+				</div>
+			),
 		},
 		{
 			ref: sectionRefs[3],
@@ -74,7 +79,7 @@ const HomePage = () => {
 			<WelcomeSpaceship />
 			<Header scroll={scrollToSection} sectionRefs={sectionRefs} />
 
-			<main className={`${Sty.all} container`}>
+			<main className={`${Sty.all}`}>
 				{sections.map((item, index) => (
 					<section key={index} ref={item.ref} className={frontPage}>
 						{item.components}

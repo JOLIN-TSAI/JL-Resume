@@ -67,11 +67,17 @@ const team: Image[] = [
 	},
 ];
 
-const filteredTrip = trip.filter((_, index) => index !== 1);
-
-function ImageCard({ image }: { image: Image }) {
+function ImageCard({
+	image,
+	wid,
+	hei,
+}: {
+	image: Image;
+	wid?: number;
+	hei?: number;
+}) {
 	return (
-		<div className={`${Sty.ImageBox}`}>
+		<div className={`${Sty.ImageBox}`} style={{ width: wid, height: hei }}>
 			<img className={Sty.FrontFace} src={image.src} alt={image.alt} />
 			<div className={Sty.backFace}>
 				<p>{image.title}</p>
@@ -82,26 +88,27 @@ function ImageCard({ image }: { image: Image }) {
 
 export default function Index() {
 	return (
-		<div className="container-fluid">
-			<div className="row">
-				<div className={`col-6 ${Sty.tripCard}`}>
-					<ImageCard image={trip[1]} />
-
-					<div className="d-flex justify-content-between">
-						{filteredTrip.map((image) => (
-							<ImageCard key={image.id} image={image} />
-						))}
-					</div>
+		<div className={`container-fluid py-5 ${Sty.all}`}>
+			<div className={`row ${Sty.content}`}>
+				<div className="col-6 d-flex">
+					{trip.map((image) => (
+						<ImageCard
+							key={image.id}
+							image={image}
+							wid={280}
+							hei={450}
+						/>
+					))}
 				</div>
 				<div className="col-6 my-auto">
 					<p className="m-0">
-						Hello！你好，我是蔡依琳，今年24歲，從實踐大學觀光管理學系畢業兩年了，曾任職於建設公司擔任工程專案秘書、教育補習屆的數位行銷企劃。而過去半年間(Jun
+						Hello！您好，我是蔡依琳，今年24歲，從實踐大學觀光管理學系畢業兩年，曾任職於建設公司擔任工程專案秘書、教育補習屆的數位行銷企劃。而過去半年間(Jun
 						2024 - Nov
-						2024)，我在資展國際股份有限公司(原資策會)，全心專注於前端的進修中，
+						2024)，我在資展國際股份有限公司(原資策會)，專注於前端工程師相關技術進修，一開始
 					</p>
 				</div>
 			</div>
-			<div className="row">
+			<div className={`row ${Sty.content}`}>
 				<div className="col-sm-7 my-auto">
 					<p className="m-0">
 						Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -121,7 +128,12 @@ export default function Index() {
 				</div>
 				<div className={`col-sm-5 d-flex flex-wrap`}>
 					{team.map((image) => (
-						<ImageCard key={image.id} image={image} />
+						<ImageCard
+							key={image.id}
+							image={image}
+							wid={150}
+							hei={150}
+						/>
 					))}
 				</div>
 			</div>
