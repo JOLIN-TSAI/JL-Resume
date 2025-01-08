@@ -21,10 +21,10 @@ export default function Index() {
 		<footer
 			style={{
 				width: "100%",
-				height: "80px",
+				height: "100%",
 				backgroundColor: "#47525d",
 			}}>
-			<div className="d-flex flex-column w-100 h-100 overflow-hidden">
+			<div className="d-flex flex-column w-100 h-100 overflow-hidden py-2">
 				<div className="d-flex mx-auto gap-3 gap-xl-5">
 					{contactIcons.map((item, index) => (
 						<div key={index} className="m-auto">
@@ -39,7 +39,12 @@ export default function Index() {
 						</div>
 					))}
 				</div>
-				<div className="m-auto">© 2024 Jolin Tsai </div>
+				<div className="d-flex justify-content-center align-content-center">
+					<p className="m-0">歡迎聯繫我 lonely507487@gmail.com</p>
+				</div>
+				<div className="d-flex justify-content-center align-content-center">
+					<p className="m-0">© 2025 Jolin Tsai</p>
+				</div>
 			</div>
 		</footer>
 	);
