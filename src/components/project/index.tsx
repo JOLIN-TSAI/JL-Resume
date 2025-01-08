@@ -107,7 +107,7 @@ export default function Project() {
 			<div className="px-md-5">
 				<h4>品牌簡介</h4>
 				<p>
-					&ensp;&ensp;&ensp;&nbsp;甜覓食光SweetyTime是一個
+					&emsp;&emsp;甜覓食光SweetyTime是一個
 					<strong>專注於甜點的綜合平台</strong>
 					，致力於為消費者提供一站式的甜點購物體驗。
 					我們匯集眾多優質甜點店家，讓消費者能輕鬆探索與選擇心儀的甜品，無論購物還是學習甜點製作，都能在這裡享受甜蜜時光。
