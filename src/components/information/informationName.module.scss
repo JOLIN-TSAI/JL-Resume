@@ -12,15 +12,18 @@
 .Personal {
 	display: flex;
 	flex-direction: column;
-	font-size: 28px;
 	font-weight: 900;
 	margin: auto;
+	padding: 0 15px 0 25px;
 	p {
-		margin: 0 auto;
+		font-size: 20px;
 	}
 }
 .other {
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: 600;
 	margin: 0 auto;
+	p {
+		margin: 0;
+	}
 }

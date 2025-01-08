@@ -6,7 +6,12 @@ interface HeaderProps {
 	scroll: (ref: RefObject<HTMLElement>) => void;
 	sectionRefs: RefObject<HTMLElement>[];
 }
-
+const styed = {
+	width: "80px",
+	borderRadius: "10px",
+	backgroundColor: "#000",
+	boxShadow: "1px 1px 5px #fff",
+};
 export default function InformationProjectsItem({
 	scroll,
 	sectionRefs,
@@ -14,34 +19,41 @@ export default function InformationProjectsItem({
 	return (
 		<>
 			<IntroductionBox sizeWidth={360} sizeHeight={360}>
-				<div className="d-flex">
+				<div className="d-flex justify-content-center">
 					<IntroductionBox sizeWidth={110} sizeHeight={100}>
 						<h6>團隊專案:</h6>
 						<p className={Sty.number}>1</p>
 					</IntroductionBox>
-					<IntroductionBox sizeWidth={250} sizeHeight={100}>
+					<IntroductionBox sizeWidth={200} sizeHeight={100}>
 						<h6>看更多</h6>
-						<div className="d-flex justify-content-center gap-3">
-							<a
-								onClick={() => scroll(sectionRefs[3])}
-								className="text-white"
-								style={{ cursor: "pointer" }}>
-								影片
-							</a>
-							<a
-								href="https://drive.google.com/file/d/1c8Cz_KO0xm74zpnxhXbMVTXf9eB6rYMl/view?usp=sharing"
-								className="text-white"
-								target="_blank"
-								rel="noopener noreferrer">
-								企劃書
-							</a>
-							<a
-								href="https://sweetytime.hkg1.zeabur.app"
-								className="text-white"
-								target="_blank"
-								rel="noopener noreferrer">
-								網站
-							</a>
+						<div className="d-flex justify-content-center">
+							<button style={styed}>
+								<a
+									onClick={() => scroll(sectionRefs[3])}
+									className="text-white"
+									style={{ cursor: "pointer" }}>
+									影片
+								</a>
+							</button>
+							<button style={styed}>
+								<a
+									href="https://drive.google.com/file/d/1c8Cz_KO0xm74zpnxhXbMVTXf9eB6rYMl/view?usp=sharing"
+									className="text-white"
+									target="_blank"
+									rel="noopener noreferrer">
+									企劃書
+								</a>
+							</button>
+
+							<button style={styed}>
+								<a
+									href="https://sweetytime.hkg1.zeabur.app"
+									className="text-white"
+									target="_blank"
+									rel="noopener noreferrer">
+									網站
+								</a>
+							</button>
 						</div>
 					</IntroductionBox>
 				</div>

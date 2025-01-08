@@ -15,14 +15,16 @@ export default function InformationName() {
 							/>
 						</div>
 						<div className={`${Sty.Personal} w-50`}>
-							<p>蔡依琳</p>
-							<p>年齡：24</p>
+							<h5>您好～</h5>
+							<h4>我是蔡依琳</h4>
+							<p>今年24歲</p>
 						</div>
 					</div>
 					<div className={Sty.other}>
-						<p>畢業： 實踐大學觀光管理學系</p>
+						<p>畢業：實踐大學觀光管理學系</p>
 						<p>興趣：閱讀、健身、旅遊</p>
-						<p>左右銘：</p>
+						<p>累積：團隊專案1、趣味遊戲5</p>
+						<p>相關經歷：前端工程師就業養成班57期</p>
 					</div>
 				</div>
 			</IntroductionBox>
