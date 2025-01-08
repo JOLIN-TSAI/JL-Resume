@@ -112,31 +112,20 @@ export default function Index() {
 				</div>
 				<div className="col-6 my-auto">
 					<p className="m-0">
-						Hello！您好，我是蔡依琳，今年24歲，從實踐大學觀光管理學系畢業兩年，曾任職於建設公司擔任工程專案秘書、教育補習屆的數位行銷企劃。而過去半年間(Jun
-						2024 - Nov
-						2024)，我在資展國際股份有限公司(原資策會)，專注於前端工程師相關技術進修，一開始
+						&emsp;&emsp;Hello！您好，我是蔡依琳，今年24歲，畢業於實踐大學觀光管理學系，畢業後累積了數位行銷企劃與工程專案管理的工作經驗。今年6月至11月，我於資展國際股份有限公司(原資策會)專注進修前端技術，學習
+						HTML、CSS、JavaScript、React、RESTful API、MySQL 和
+						Node.js
+						等技能。期間擔任專案組長，帶領六人團隊成功完成專案開發與管理，並大幅提升技術與團隊協作能力。我熱衷嘗試新鮮事物，擁有強烈的學習動力，樂於吸收新知與迎接挑戰，自我要求驅使我不斷精進專業能力。
 					</p>
 				</div>
 			</div>
 			<div className={`row ${Sty.content}`}>
-				<div className="col-7 col-sm-5 col-md-7 my-auto">
+				<div className="col-7 col-sm-5 col-md-7 my-auto pe-0 p-md-5">
 					<p className="m-0">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Dolores molestias id earum mollitia, in a, corrupti
-						laboriosam rerum vel, quisquam vero! Quod minima ratione
-						officiis. Porro doloremque quo fuga cumque. Quaerat
-						debitis, repellendus provident beatae, id hic doloremque
-						cumque voluptatem quam error omnis saepe harum incidunt
-						officia ducimus dicta nulla aliquam exercitationem
-						accusamus rerum, qui voluptate et unde delectus. Quidem.
-						Eligendi optio autem quam officiis deleniti a vel
-						suscipit. Neque illo placeat id, reprehenderit commodi
-						voluptates? Asperiores dolore impedit quibusdam nihil
-						ipsum! Quas sunt aliquam quae magnam blanditiis
-						voluptatum recusandae!
+						&emsp;&emsp;除了專業技能外，我在校園生活中也積極參與各項活動，展現出主動投入與團隊合作的特質。我曾擔任校園活動主持人，帶領活動氣氛，累積了良好的溝通與臨場應變能力；參與過麥當勞分店比賽及台北國際旅展巡場等活動，深刻體會團隊合作的重要性；同時，我也熱衷於籃球運動，作為系隊的一員，在賽場上不僅學會合作，也培養了不輕言放棄的精神。此外，我參與系上招生面試相關事務，主動協助系所形象推廣，展現了積極開朗的態度與責任感。這些經驗讓我擁有更成熟的態度面對各種挑戰，並能快速融入團隊環境。
 					</p>
 				</div>
-				<div className={`col-5 col-sm-7 col-md-5 d-flex flex-wrap`}>
+				<div className={`col-5 col-sm-7 col-md-5 d-flex flex-wrap p-0`}>
 					{team.map((image, index) => (
 						<div key={index} className={Sty.teamBox}>
 							<img
