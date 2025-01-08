@@ -71,7 +71,7 @@ const HomePage = () => {
 						<img
 							src="/project/sweetyTime/bg.png"
 							alt="backgroundImage"
-							className={`${Sty.backgroundImage}`}
+							className={`${Sty.backgroundImage} d-none d-md-block`}
 							style={{ position: "absolute" }}
 						/>
 					</div>
