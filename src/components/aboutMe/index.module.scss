@@ -73,6 +73,21 @@
 	width: 150px;
 	height: 150px;
 }
+.toggleButton {
+	margin-top: 10px;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	padding: 8px 12px;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	font-size: 0.9rem;
+
+	&:hover {
+		background-color: #0056b3;
+	}
+}
 
 @media screen and (max-width: 480px) {
 	.tripBox {
@@ -82,5 +97,10 @@
 	.teamBox {
 		width: 100px;
 		height: 100px;
+	}
+	.toggleButton {
+		width: 100%;
+		font-size: 0.8rem;
+		padding: 6px 10px;
 	}
 }
