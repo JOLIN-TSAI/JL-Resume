@@ -36,8 +36,7 @@ const HomePage = () => {
 			ref: sectionRefs[0],
 			components: (
 				<>
-					<div
-						className={`${Sty.frontPage} p-0 position-relative container`}>
+					<div className={`${Sty.frontPage} p-0 container`}>
 						<InformationName />
 						<InformationProjectsItem />
 						<InformationExperience />
@@ -45,11 +44,11 @@ const HomePage = () => {
 						<InformationFrontSkill />
 						<InformationBackSkill />
 					</div>
-					<img
+					{/* <img
 						src="/blob.gif"
 						alt="backgroundImage"
 						className={`${Sty.blobImage} position-absolute`}
-					/>
+					/> */}
 				</>
 			),
 		},
