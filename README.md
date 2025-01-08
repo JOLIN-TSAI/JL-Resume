@@ -1,50 +1,29 @@
-# React + TypeScript + Vite
+🛠️ 功能特色
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. 動態時間軸
+   以清晰的時間軸形式展示重要事件，包括日期、描述與直觀圖示。
+2. 懸停放大效果
+   滑鼠懸停時，時間軸項目會放大至 1.2 倍，提升視覺吸引力。
+3. 深色模式支援
+   根據使用者的深色模式偏好，動態調整元件的顏色與背景。
+4. React Icons 整合
+   利用 react-icons 為時間軸事件添加直觀且吸引人的圖示。
+5. HTML5 iframe 嵌入影片
+   支援將影片嵌入時間軸項目，增強內容表現力。
+6. 模組化程式碼
+   使用結構化與模組化的程式碼，便於維護與重複使用。
 
-Currently, two official plugins are available:
+🧰 使用技術
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+1. React
+   用於構建動態且響應式的前端介面。
+2. TypeScript
+   靜態類型檢查，提升程式碼的安全性與可靠性。
+3. react-vertical-timeline-component
+   高效的第三方時間軸元件庫，用於視覺化事件展示。
+4. react-icons
+   提供豐富的圖示資源，用於直觀地表達每個里程碑。
+5. CSS
+   實現動畫效果，如懸停放大與過渡，增強視覺體驗。
+6. HTML5 iframe
+   用於嵌入影片，讓影片能順利播放，提升內容展示的多樣性。
