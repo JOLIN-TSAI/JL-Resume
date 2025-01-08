@@ -114,7 +114,7 @@ export default function Project() {
 				</p>
 			</div>
 
-			<div ref={brandRef} className={Sty.brand}>
+			<div ref={brandRef} className={`${Sty.brand} ${Sty.introduction}`}>
 				{brandItems.map((item, index) => (
 					<div key={index} className={Sty.brandItem}>
 						<h4>{item.title}</h4>
@@ -127,7 +127,7 @@ export default function Project() {
 				))}
 			</div>
 
-			<div ref={skillRef} className={Sty.skill}>
+			<div ref={skillRef} className={`${Sty.skill} ${Sty.introduction}`}>
 				<h4>使用技術</h4>
 				<div className={Sty.skillItems}>
 					{skills.map((skill, index) => (
