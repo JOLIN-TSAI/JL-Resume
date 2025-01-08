@@ -7,36 +7,44 @@ export default function Project() {
 	const brandRef = useRef<HTMLDivElement>(null);
 	const skillRef = useRef<HTMLDivElement>(null);
 
-	const shops = [
+	const brandItems = [
 		{
-			id: "1",
-			title: "網站前台",
-			url: "/project/sweetyTime/frontDesk.png",
+			title: "前台技術",
+			content: [
+				"Site map與ER model設計",
+				"切版與響應式設計(RWD)",
+				"前台店家列表 篩選與收藏",
+				"後台管理頁面 CRUD 功能",
+				"店家後台訂單 篩選與搜尋",
+			],
 		},
 		{
-			id: "2",
-			title: "詳細頁",
-			url: "/project/sweetyTime/detailPage.png",
+			title: "後台技術",
+			content: ["資料庫結構設計(MySQL)", "RESTful API", "Node.js"],
 		},
 		{
-			id: "3",
-			title: "admin後台商家管理",
-			url: "/project/sweetyTime/adminBackstage-CD.png",
+			title: "Figma 視覺規劃",
+			content: [
+				"前台店家列表頁",
+				"前台店家細節頁",
+				"前台會員中心",
+				"後台管理者店家CRUD頁面",
+				"後台店家訂單管理與明細",
+			],
 		},
 		{
-			id: "4",
-			title: "admin後台商家RU功能",
-			url: "/project/sweetyTime/adminBackstage-RU.png",
+			title: "技術研究",
+			content: ["全台便利商店API", "React-hot-toast", "sweet alert"],
 		},
 		{
-			id: "5",
-			title: "商家後台訂單管理",
-			url: "/project/sweetyTime/shopBackstage-list.png",
-		},
-		{
-			id: "6",
-			title: "商家後台訂單內容",
-			url: "/project/sweetyTime/shopBackstage-detail.png",
+			title: "其他主責",
+			content: [
+				"行前時程規劃",
+				"專案進度控管",
+				"每週會議協調",
+				"夥伴工作分配",
+				"企劃書規劃與撰寫",
+			],
 		},
 	];
 
@@ -50,7 +58,7 @@ export default function Project() {
 		{ title: "Bootstrap", url: "/project/sweetyTime/skills/Bootstrap.png" },
 		{ title: "Sass", url: "/project/sweetyTime/skills/Sass.png" },
 		{
-			title: "SweetAlert2",
+			title: "SweetAlert",
 			url: "/project/sweetyTime/skills/SweetAlert2.png",
 		},
 		{ title: "MUI", url: "/project/sweetyTime/skills/MUI.png" },
@@ -96,52 +104,56 @@ export default function Project() {
 					}}>
 					SweetyTime甜覓食光
 				</h2>
-
-				<div
-					ref={brandRef}
-					className={`${Sty.brand} ${Sty.introduction}`}>
+				<div className="px-md-5">
 					<h4>品牌簡介</h4>
 					<p>
-						甜覓食光SweetyTime是一個
+						&ensp;&ensp;&ensp;&nbsp;甜覓食光SweetyTime是一個
 						<strong>專注於甜點的綜合平台</strong>
 						，致力於為消費者提供一站式的甜點購物體驗。
-						我們匯集眾多優質甜點店家，讓消費者能輕鬆探索與選擇心儀的甜品，無論購物還是學習甜點製作，都能在這裡享受甜蜜時光。填補了現今電商平台中對甜點領域關注的空白。
+						我們匯集眾多優質甜點店家，讓消費者能輕鬆探索與選擇心儀的甜品，無論購物還是學習甜點製作，都能在這裡享受甜蜜時光。
 					</p>
 				</div>
-				<div
-					ref={skillRef}
-					className={`${Sty.skill} ${Sty.introduction}`}>
+				<div ref={brandRef} className={Sty.brand}>
+					{brandItems.map((item, index) => (
+						<div key={index} className={Sty.brandItem}>
+							<h4>{item.title}</h4>
+							<ol>
+								{item.content.map((content, contentIndex) => (
+									<li key={contentIndex}>{content}</li>
+								))}
+							</ol>
+						</div>
+					))}
+				</div>
+				<div ref={skillRef} className={Sty.skill}>
 					<h4>使用技術</h4>
 					<div className={Sty.skillItems}>
 						{skills.map((skill, index) => (
-							<div
-								key={index}
-								style={{
-									display: "flex",
-									flexDirection: "column",
-									alignItems: "center",
-								}}>
-								<h6>{skill.title}</h6>
-								<img
-									src={skill.url}
-									alt={skill.title}
-									style={{ width: "80px", height: "80px" }}
-								/>
+							<div key={index} className={Sty.skillItem}>
+								<p>{skill.title}</p>
+								<img src={skill.url} alt={skill.title} />
 							</div>
 						))}
 					</div>
 				</div>
-			</div>
-			<div className={Sty.project}>
-				{shops.map((shop, index) => (
-					<div key={index} className={Sty.items}>
-						<div className={Sty.decorate}>{shop.id}</div>
-						<h3>{shop.title}</h3>
-						<div className={Sty.imageBox}>
-							<img src={shop.url} alt="" className={Sty.image} />
-						</div>
-					</div>
-				))}
+				<div className={Sty.project}>
+					<video controls aria-label="Sweety Time 專案介紹影片">
+						<source
+							src="/project/sweetyTime/video/ProjectVideo.MOV"
+							type="video/MOV"
+						/>
+						<source
+							src="/project/sweetyTime/video/ProjectVideo.mp4"
+							type="video/mp4"
+						/>
+						<track
+							kind="subtitles"
+							srcLang="en"
+							src="/videos/video2-en.vtt"
+						/>
+						<p>您的瀏覽器不支援播放此影片。</p>
+					</video>
+				</div>
 			</div>
 		</>
 	);

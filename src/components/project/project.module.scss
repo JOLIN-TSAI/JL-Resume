@@ -1,79 +1,89 @@
 .all {
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	margin: 0 15px;
 	gap: 5px;
+}
 
-	.introduction {
-		padding: 20px;
-		border-radius: 15px;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
+.brand {
+	width: 100%;
+	display: grid;
+	grid-auto-flow: column;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 15px;
+	background-color: #bcc6fa;
+	padding: 15px;
+	border-radius: 15px;
+
+	.brandItem {
+		background-color: white;
 		color: #434383;
-		opacity: 0;
-		transform: translateY(50px);
-		transition: opacity 0.8s ease, transform 0.8s ease;
-	}
+		border: 1px solid #ddd;
+		padding: 15px;
+		border-radius: 8px;
 
-	.brand {
-		background-color: #c3e48f;
-	}
-
-	.skill {
-		width: 100%;
-		background-color: rgb(244, 200, 207);
-
-		.skillItems {
-			display: flex;
-			justify-content: center;
-			flex-wrap: wrap;
-			gap: 5px;
+		h4 {
+			color: #434383;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+		ol {
+			padding-left: 20px;
+			li {
+				line-height: 1.5;
+			}
 		}
 	}
+}
 
-	.visible {
-		opacity: 1;
-		transform: translateY(0);
+.skill {
+	background-color: rgb(244, 200, 207);
+	border-radius: 15px;
+	h4 {
+		text-align: center;
+		padding: 20px 0;
+	}
+
+	.skillItems {
+		width: 100%;
+		display: grid;
+		grid-auto-flow: column;
+		grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+		text-align: center;
+		.skillItem {
+			color: #434383;
+			border: 1px solid #ddd;
+			padding: 5px;
+			border-radius: 8px;
+			&:hover {
+				scale: 1.2;
+				background-color: #f6a8e0;
+			}
+			img {
+				padding-top: 5px;
+				width: 80%;
+				height: 60%;
+			}
+		}
 	}
 }
 
 .project {
 	width: 100%;
-	height: 100%;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	flex-wrap: wrap;
-	gap: 3%;
+	height: 600px;
+	background-color: #bcc6fa;
+	border-radius: 15px;
+	video {
+		width: 100%;
+		height: 100%;
+	}
+}
 
-	.items {
-		width: 387px;
-		height: 600px;
-		margin-bottom: 2%;
-		border: 1px dashed #e0f8b9;
-		border-radius: 15px;
-		overflow: hidden;
-
-		.decorate {
-			width: 15px;
-			height: 20px;
-			background-color: yellow;
-			padding-left: 3px;
-		}
-
-		.imageBox {
-			width: 100%;
-			height: 90%;
-		}
-
-		.image {
-			width: 100%;
-			height: 100%;
-			background-size: cover;
-		}
+@media (max-width: 480px) {
+	.brand {
+		padding: 10px;
 	}
 }
