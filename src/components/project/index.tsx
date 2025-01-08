@@ -101,7 +101,7 @@ export default function Project() {
 						? "3px 3px 30px #434383"
 						: "3px 3px 30px yellow",
 				}}>
-				SweetyTime甜覓食光
+				團隊專案： SweetyTime甜覓食光
 			</h2>
 
 			<div className="px-md-5">

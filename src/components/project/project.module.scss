@@ -1,10 +1,10 @@
 .all {
-	width: 100%;
+	max-width: 1200px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin: 0 15px;
+	margin: 0 auto 50px auto;
 	gap: 5px;
 }
 

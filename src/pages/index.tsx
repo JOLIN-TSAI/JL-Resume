@@ -63,9 +63,19 @@ const HomePage = () => {
 		{
 			ref: sectionRefs[3],
 			components: (
-				<div className="container" style={{ paddingTop: "50px" }}>
-					<Project />
-				</div>
+				<>
+					<div
+						className="container-fluid"
+						style={{ position: "relative", paddingTop: "50px" }}>
+						<Project />
+						<img
+							src="/project/sweetyTime/bg.png"
+							alt="backgroundImage"
+							className={`${Sty.backgroundImage}`}
+							style={{ position: "absolute" }}
+						/>
+					</div>
+				</>
 			),
 		},
 		{
