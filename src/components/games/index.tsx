@@ -77,10 +77,22 @@ export default function GameBox() {
 			</div>
 
 			{/* 左右箭頭（裝飾用） */}
-			<div style={{ position: "absolute", left: "10%", top: "50%" }}>
+			<div
+				style={{
+					position: "absolute",
+					left: "10%",
+					top: "50%",
+					cursor: "not-allowed",
+				}}>
 				<FaArrowLeft size={30} color="#ccc" />
 			</div>
-			<div style={{ position: "absolute", right: "10%", top: "50%" }}>
+			<div
+				style={{
+					position: "absolute",
+					right: "10%",
+					top: "50%",
+					cursor: "not-allowed",
+				}}>
 				<FaArrowRight size={30} color="#ccc" />
 			</div>
 		</div>
