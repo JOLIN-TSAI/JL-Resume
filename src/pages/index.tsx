@@ -80,7 +80,15 @@ const HomePage = () => {
 		},
 		{
 			ref: sectionRefs[4],
-			components: <Games />,
+			components: (
+				<div
+					className="container-fluid"
+					style={{
+						padding: "50px 0 0 0",
+					}}>
+					<Games />
+				</div>
+			),
 		},
 	];
 
@@ -89,7 +97,7 @@ const HomePage = () => {
 			<WelcomeSpaceship />
 			<Header scroll={scrollToSection} sectionRefs={sectionRefs} />
 
-			<main className={`${Sty.all}`}>
+			<main className={`${Sty.all} `}>
 				{sections.map((item, index) => (
 					<section key={index} ref={item.ref} className={frontPage}>
 						{item.components}

@@ -31,6 +31,7 @@ export default function GameBox() {
 	// 容器樣式
 	const containerStyle: React.CSSProperties = {
 		display: "flex",
+		justifyContent: "center",
 		overflow: "auto",
 		gap: "16px",
 		padding: "16px",
@@ -48,8 +49,19 @@ export default function GameBox() {
 	};
 
 	return (
-		<div style={{ position: "relative", overflow: "hidden" }}>
-			<h2 style={{ margin: "0 auto", textAlign: "center" }}>
+		<div
+			style={{
+				position: "relative",
+				overflow: "hidden",
+				backgroundColor: "black",
+				padding: "15px 0",
+			}}>
+			<h2
+				style={{
+					margin: "0 auto",
+					textAlign: "center",
+					color: "white",
+				}}>
 				趣味遊戲 Side Project
 			</h2>
 			<div ref={containerRef} style={containerStyle}>

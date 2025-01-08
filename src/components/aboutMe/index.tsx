@@ -82,7 +82,7 @@ export default function Index() {
 	}, []);
 
 	return (
-		<div className={`container-fluid py-5 ${Sty.all}`}>
+		<div className={`py-5 ${Sty.all}`}>
 			<div className={`row ${Sty.content}`}>
 				<div className="col-6 d-flex flex-wrap p-0">
 					<div className={Sty.tripBox}>
