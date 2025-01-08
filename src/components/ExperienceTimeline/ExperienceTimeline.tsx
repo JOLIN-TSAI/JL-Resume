@@ -5,6 +5,7 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import { FaBriefcase, FaGraduationCap, FaStar } from "react-icons/fa";
 import { useBackgroundState } from "@/hooks/backgroundState";
+import Sty from "./ExperienceTimeline.module.scss";
 
 export default function Timeline() {
 	const { isDarkMode } = useBackgroundState();
@@ -59,7 +60,7 @@ export default function Timeline() {
 			{timelineData.map((item, index) => (
 				<VerticalTimelineElement
 					key={index}
-					className="work"
+					className={Sty.line}
 					date={item.date}
 					contentStyle={{
 						background: item.background,
