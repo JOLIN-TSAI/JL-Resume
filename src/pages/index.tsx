@@ -38,7 +38,11 @@ const HomePage = () => {
 				<>
 					<div className={`${Sty.frontPage} p-0 container`}>
 						<InformationName />
-						<InformationProjectsItem />
+						<InformationProjectsItem
+							scroll={scrollToSection}
+							sectionRefs={sectionRefs}
+						/>
+
 						<InformationExperience />
 						<InformationAddress />
 						<InformationFrontSkill />
