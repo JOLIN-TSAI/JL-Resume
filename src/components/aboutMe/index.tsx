@@ -6,6 +6,7 @@ interface Image {
 	title: string;
 	src: string;
 	alt: string;
+	flippedSrc: string;
 }
 
 const trip: Image[] = [
@@ -13,18 +14,21 @@ const trip: Image[] = [
 		id: 1,
 		title: "In Taiwan",
 		src: "/aboutMe/Taiwan.jpg",
+		flippedSrc: "/aboutMe/TaiwanBack.GIF",
 		alt: "參加人生音樂祭的照片",
 	},
 	{
 		id: 2,
 		title: "In Korea",
 		src: "/aboutMe/Korea.jpg",
+		flippedSrc: "/aboutMe/KoreaBack.GIF",
 		alt: "去韓國的照片",
 	},
 	{
 		id: 3,
 		title: "In Japan",
 		src: "/aboutMe/Japan.jpg",
+		flippedSrc: "/aboutMe/JapanBack.GIF",
 		alt: "去日本玩的照片",
 	},
 ];
@@ -34,36 +38,42 @@ const team: Image[] = [
 		id: 1,
 		title: "In Japan",
 		src: "/aboutMe/host.jpg",
+		flippedSrc: "",
 		alt: "當主持人的照片",
 	},
 	{
 		id: 2,
 		title: "系上新生活動主持人合照",
 		src: "/aboutMe/team1.jpg",
+		flippedSrc: "",
 		alt: "系上新生活動主持人合照",
 	},
 	{
 		id: 3,
 		title: "麥當勞分店比賽照片",
 		src: "/aboutMe/team2.jpg",
+		flippedSrc: "",
 		alt: "麥當勞分店比賽照片",
 	},
 	{
 		id: 4,
 		title: "台北國際旅展巡場組合照",
 		src: "/aboutMe/team3.jpg",
+		flippedSrc: "",
 		alt: "台北國際旅展巡場組合照",
 	},
 	{
 		id: 5,
 		title: "系上招生面試合照",
 		src: "/aboutMe/team4.jpg",
+		flippedSrc: "",
 		alt: "系上招生面試合照",
 	},
 	{
 		id: 6,
 		title: "籃球系隊賽前合照",
 		src: "/aboutMe/team5.jpg",
+		flippedSrc: "",
 		alt: "籃球系隊賽前合照",
 	},
 ];
@@ -92,7 +102,11 @@ export default function Index() {
 							alt={trip[currentImageIndex].alt}
 						/>
 						<div className={Sty.backFace}>
-							<p>{trip[currentImageIndex].title}</p>
+							<img
+								className={Sty.FrontFace}
+								src={trip[currentImageIndex].flippedSrc}
+								alt={trip[currentImageIndex].alt}
+							/>
 						</div>
 					</div>
 				</div>
