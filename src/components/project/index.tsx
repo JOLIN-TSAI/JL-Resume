@@ -94,67 +94,62 @@ export default function Project() {
 	}, []);
 
 	return (
-		<>
-			<div className={Sty.all}>
-				<h2
-					style={{
-						textShadow: isDarkMode
-							? "3px 3px 30px #434383"
-							: "3px 3px 30px yellow",
-					}}>
-					SweetyTime甜覓食光
-				</h2>
-				<div className="px-md-5">
-					<h4>品牌簡介</h4>
-					<p>
-						&ensp;&ensp;&ensp;&nbsp;甜覓食光SweetyTime是一個
-						<strong>專注於甜點的綜合平台</strong>
-						，致力於為消費者提供一站式的甜點購物體驗。
-						我們匯集眾多優質甜點店家，讓消費者能輕鬆探索與選擇心儀的甜品，無論購物還是學習甜點製作，都能在這裡享受甜蜜時光。
-					</p>
-				</div>
-				<div ref={brandRef} className={Sty.brand}>
-					{brandItems.map((item, index) => (
-						<div key={index} className={Sty.brandItem}>
-							<h4>{item.title}</h4>
-							<ol>
-								{item.content.map((content, contentIndex) => (
-									<li key={contentIndex}>{content}</li>
-								))}
-							</ol>
+		<div className={Sty.all}>
+			<h2
+				style={{
+					textShadow: isDarkMode
+						? "3px 3px 30px #434383"
+						: "3px 3px 30px yellow",
+				}}>
+				SweetyTime甜覓食光
+			</h2>
+
+			<div className="px-md-5">
+				<h4>品牌簡介</h4>
+				<p>
+					&ensp;&ensp;&ensp;&nbsp;甜覓食光SweetyTime是一個
+					<strong>專注於甜點的綜合平台</strong>
+					，致力於為消費者提供一站式的甜點購物體驗。
+					我們匯集眾多優質甜點店家，讓消費者能輕鬆探索與選擇心儀的甜品，無論購物還是學習甜點製作，都能在這裡享受甜蜜時光。
+				</p>
+			</div>
+
+			<div ref={brandRef} className={Sty.brand}>
+				{brandItems.map((item, index) => (
+					<div key={index} className={Sty.brandItem}>
+						<h4>{item.title}</h4>
+						<ol>
+							{item.content.map((content, contentIndex) => (
+								<li key={contentIndex}>{content}</li>
+							))}
+						</ol>
+					</div>
+				))}
+			</div>
+
+			<div ref={skillRef} className={Sty.skill}>
+				<h4>使用技術</h4>
+				<div className={Sty.skillItems}>
+					{skills.map((skill, index) => (
+						<div key={index}>
+							<p>{skill.title}</p>
+							<div className={Sty.skillItem}>
+								<img src={skill.url} alt={skill.title} />
+							</div>
 						</div>
 					))}
 				</div>
-				<div ref={skillRef} className={Sty.skill}>
-					<h4>使用技術</h4>
-					<div className={Sty.skillItems}>
-						{skills.map((skill, index) => (
-							<div key={index} className={Sty.skillItem}>
-								<p>{skill.title}</p>
-								<img src={skill.url} alt={skill.title} />
-							</div>
-						))}
-					</div>
-				</div>
-				<div className={Sty.project}>
-					<video controls aria-label="Sweety Time 專案介紹影片">
-						<source
-							src="/project/sweetyTime/video/ProjectVideo.MOV"
-							type="video/MOV"
-						/>
-						<source
-							src="/project/sweetyTime/video/ProjectVideo.mp4"
-							type="video/mp4"
-						/>
-						<track
-							kind="subtitles"
-							srcLang="en"
-							src="/videos/video2-en.vtt"
-						/>
-						<p>您的瀏覽器不支援播放此影片。</p>
-					</video>
-				</div>
 			</div>
-		</>
+
+			<div className={Sty.project}>
+				<iframe
+					width="100%"
+					height="100%"
+					src="https://www.youtube.com/embed/kYp50gVkwtg"
+					title="Sweety Time 專案介紹影片"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					allowFullScreen></iframe>
+			</div>
+		</div>
 	);
 }

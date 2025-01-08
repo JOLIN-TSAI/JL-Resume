@@ -9,9 +9,8 @@
 }
 
 .brand {
-	width: 100%;
+	max-width: 100%;
 	display: grid;
-	grid-auto-flow: column;
 	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 	gap: 15px;
 	background-color: #bcc6fa;
@@ -30,8 +29,10 @@
 			font-weight: bold;
 			margin-bottom: 10px;
 		}
+
 		ol {
 			padding-left: 20px;
+
 			li {
 				line-height: 1.5;
 			}
@@ -40,32 +41,41 @@
 }
 
 .skill {
+	width: 100%;
 	background-color: rgb(244, 200, 207);
 	border-radius: 15px;
+	padding: 20px 0;
+
 	h4 {
 		text-align: center;
-		padding: 20px 0;
 	}
 
 	.skillItems {
-		width: 100%;
-		display: grid;
-		grid-auto-flow: column;
-		grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+		max-width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
 		text-align: center;
+
+		p {
+			margin: 0;
+		}
+
 		.skillItem {
-			color: #434383;
-			border: 1px solid #ddd;
+			width: 80px;
+			height: 80px;
 			padding: 5px;
 			border-radius: 8px;
+
 			&:hover {
 				scale: 1.2;
 				background-color: #f6a8e0;
 			}
+
 			img {
 				padding-top: 5px;
-				width: 80%;
-				height: 60%;
+				width: 100%;
+				height: 100%;
 			}
 		}
 	}
@@ -74,16 +84,42 @@
 .project {
 	width: 100%;
 	height: 600px;
+	margin: 0 auto;
 	background-color: #bcc6fa;
 	border-radius: 15px;
-	video {
-		width: 100%;
-		height: 100%;
+	overflow: hidden;
+}
+
+@media (max-width: 768px) {
+	.all {
+		margin: 0;
+	}
+
+	.brand {
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+		.brandItem {
+			padding: 2px;
+		}
+	}
+
+	.project {
+		height: 400px;
 	}
 }
 
 @media (max-width: 480px) {
 	.brand {
-		padding: 10px;
+		grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+	}
+
+	.project {
+		height: 350px;
+	}
+
+	.skill {
+		.skillItems {
+			justify-content: center;
+		}
 	}
 }
