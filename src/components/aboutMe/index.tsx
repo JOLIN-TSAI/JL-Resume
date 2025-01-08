@@ -105,7 +105,7 @@ export default function Index() {
 				</div>
 			</div>
 			<div className={`row ${Sty.content}`}>
-				<div className="col-7 my-auto">
+				<div className="col-7 col-sm-5 col-md-7 my-auto">
 					<p className="m-0">
 						Lorem ipsum dolor sit amet consectetur adipisicing elit.
 						Dolores molestias id earum mollitia, in a, corrupti
@@ -122,7 +122,7 @@ export default function Index() {
 						voluptatum recusandae!
 					</p>
 				</div>
-				<div className={`col-5 d-flex flex-wrap`}>
+				<div className={`col-5 col-sm-7 col-md-5 d-flex flex-wrap`}>
 					{team.map((image, index) => (
 						<div key={index} className={Sty.teamBox}>
 							<img
