@@ -23,17 +23,13 @@ export default function InformationProjectsItem({
 						<h6>看更多</h6>
 						<div className="d-flex justify-content-center">
 							<button className={Sty.btn}>
-								<a
-									onClick={() => scroll(sectionRefs[3])}
-									className="text-white"
-									style={{ cursor: "pointer" }}>
+								<a onClick={() => scroll(sectionRefs[3])}>
 									影片
 								</a>
 							</button>
 							<button className={Sty.btn}>
 								<a
 									href="https://drive.google.com/file/d/1c8Cz_KO0xm74zpnxhXbMVTXf9eB6rYMl/view?usp=sharing"
-									className="text-white"
 									target="_blank"
 									rel="noopener noreferrer">
 									企劃書
@@ -43,7 +39,6 @@ export default function InformationProjectsItem({
 							<button className={Sty.btn}>
 								<a
 									href="https://sweetytime.hkg1.zeabur.app"
-									className="text-white"
 									target="_blank"
 									rel="noopener noreferrer">
 									網站
