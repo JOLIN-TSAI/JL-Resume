@@ -6,12 +6,7 @@ interface HeaderProps {
 	scroll: (ref: RefObject<HTMLElement>) => void;
 	sectionRefs: RefObject<HTMLElement>[];
 }
-const styed = {
-	width: "80px",
-	borderRadius: "10px",
-	backgroundColor: "#000",
-	boxShadow: "1px 1px 5px #fff",
-};
+
 export default function InformationProjectsItem({
 	scroll,
 	sectionRefs,
@@ -27,7 +22,7 @@ export default function InformationProjectsItem({
 					<IntroductionBox sizeWidth={200} sizeHeight={100}>
 						<h6>看更多</h6>
 						<div className="d-flex justify-content-center">
-							<button style={styed}>
+							<button className={Sty.btn}>
 								<a
 									onClick={() => scroll(sectionRefs[3])}
 									className="text-white"
@@ -35,7 +30,7 @@ export default function InformationProjectsItem({
 									影片
 								</a>
 							</button>
-							<button style={styed}>
+							<button className={Sty.btn}>
 								<a
 									href="https://drive.google.com/file/d/1c8Cz_KO0xm74zpnxhXbMVTXf9eB6rYMl/view?usp=sharing"
 									className="text-white"
@@ -45,7 +40,7 @@ export default function InformationProjectsItem({
 								</a>
 							</button>
 
-							<button style={styed}>
+							<button className={Sty.btn}>
 								<a
 									href="https://sweetytime.hkg1.zeabur.app"
 									className="text-white"
