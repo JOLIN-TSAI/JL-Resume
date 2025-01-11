@@ -13,6 +13,7 @@ import AboutMe from "@/components/aboutMe";
 import Project from "@/components/project";
 import Games from "@/components/games";
 import Sty from "@/styles/index.module.scss";
+import Ul from "@/components/ThreeBook/Ul";
 
 const HomePage = () => {
 	const sectionRefs = [
@@ -93,6 +94,10 @@ const HomePage = () => {
 					<Games />
 				</div>
 			),
+		},
+		{
+			ref: sectionRefs[5],
+			components: <Ul />,
 		},
 	];
 
