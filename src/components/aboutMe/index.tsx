@@ -36,10 +36,10 @@ const trip: Image[] = [
 const team: Image[] = [
 	{
 		id: 1,
-		title: "In Japan",
+		title: "校園主持的照片",
 		src: "/aboutMe/host.jpg",
 		flippedSrc: "",
-		alt: "當主持人的照片",
+		alt: "校園主持的照片",
 	},
 	{
 		id: 2,
