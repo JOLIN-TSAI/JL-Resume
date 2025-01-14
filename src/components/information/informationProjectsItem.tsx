@@ -55,7 +55,7 @@ export default function InformationProjectsItem({
 					</div>
 					<div className={Sty.projectInfo}>
 						<h5>專案種類:</h5>
-						<p>甜點電商平台</p>
+						<p>第三方｜甜點電商平台｜</p>
 					</div>
 					<div className={Sty.projectInfo}>
 						<h5>負責區域:</h5>
