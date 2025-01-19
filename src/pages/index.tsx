@@ -1,19 +1,40 @@
-import { RefObject, useRef } from "react";
+import { Suspense, lazy, useRef } from "react";
 import Header from "@/components/header";
-import InformationName from "@/components/information/informationName";
-import InformationProjectsItem from "@/components/information/informationProjectsItem";
-import InformationExperience from "@/components/information/informationExperience";
-import InformationAddress from "@/components/information/informationAddress";
-import InformationFrontSkill from "@/components/information/informationSkills/informationFrontSkill";
-import InformationBackSkill from "@/components/information/informationSkills/informationBackSkill";
 import WelcomeSpaceship from "@/components/WelcomeSpaceship";
-import ExperienceTimeline from "@/components/ExperienceTimeline/ExperienceTimeline";
 import Footer from "@/components/footer";
-import AboutMe from "@/components/aboutMe";
-import Project from "@/components/project";
-import Games from "@/components/games";
 import Sty from "@/styles/index.module.scss";
-// import { Line } from "@/components/ThreeBook/Ul";
+
+// 懶加載各個組件
+const InformationName = lazy(
+	() => import("@/components/information/informationName")
+);
+const InformationProjectsItem = lazy(
+	() => import("@/components/information/informationProjectsItem")
+);
+const InformationExperience = lazy(
+	() => import("@/components/information/informationExperience")
+);
+const InformationAddress = lazy(
+	() => import("@/components/information/informationAddress")
+);
+const InformationFrontSkill = lazy(
+	() =>
+		import(
+			"@/components/information/informationSkills/informationFrontSkill"
+		)
+);
+const InformationBackSkill = lazy(
+	() =>
+		import(
+			"@/components/information/informationSkills/informationBackSkill"
+		)
+);
+const AboutMe = lazy(() => import("@/components/aboutMe"));
+const ExperienceTimeline = lazy(
+	() => import("@/components/ExperienceTimeline/ExperienceTimeline")
+);
+const Project = lazy(() => import("@/components/project"));
+const Games = lazy(() => import("@/components/games"));
 
 const HomePage = () => {
 	const sectionRefs = [
@@ -24,7 +45,7 @@ const HomePage = () => {
 		useRef<HTMLElement>(null),
 	];
 
-	const scrollToSection = (ref: RefObject<HTMLElement>) => {
+	const scrollToSection = (ref: React.RefObject<HTMLElement>) => {
 		if (ref.current) {
 			ref.current.scrollIntoView({ behavior: "smooth" });
 		}
@@ -36,39 +57,41 @@ const HomePage = () => {
 		{
 			ref: sectionRefs[0],
 			components: (
-				<>
+				<Suspense fallback={<div>Loading Information...</div>}>
 					<div className={`${Sty.frontPage} p-0 container`}>
 						<InformationName />
 						<InformationProjectsItem
 							scroll={scrollToSection}
 							sectionRefs={sectionRefs}
 						/>
-
 						<InformationExperience />
 						<InformationAddress />
 						<InformationFrontSkill />
 						<InformationBackSkill />
 					</div>
-					{/* <img
-						src="/blob.gif"
-						alt="backgroundImage"
-						className={`${Sty.blobImage} position-absolute`}
-					/> */}
-				</>
+				</Suspense>
 			),
 		},
 		{
 			ref: sectionRefs[1],
-			components: <AboutMe />,
+			components: (
+				<Suspense fallback={<div>Loading About Me...</div>}>
+					<AboutMe />
+				</Suspense>
+			),
 		},
 		{
 			ref: sectionRefs[2],
-			components: <ExperienceTimeline />,
+			components: (
+				<Suspense fallback={<div>Loading Experience Timeline...</div>}>
+					<ExperienceTimeline />
+				</Suspense>
+			),
 		},
 		{
 			ref: sectionRefs[3],
 			components: (
-				<>
+				<Suspense fallback={<div>Loading Project...</div>}>
 					<div
 						className="container-fluid"
 						style={{ position: "relative", paddingTop: "50px" }}>
@@ -80,40 +103,34 @@ const HomePage = () => {
 							style={{ position: "absolute" }}
 						/>
 					</div>
-				</>
+				</Suspense>
 			),
 		},
 		{
 			ref: sectionRefs[4],
 			components: (
-				<div
-					className="container-fluid"
-					style={{
-						padding: "50px 0 0 0",
-					}}>
-					<Games />
-				</div>
+				<Suspense fallback={<div>Loading Games...</div>}>
+					<div
+						className="container-fluid"
+						style={{ padding: "50px 0 0 0" }}>
+						<Games />
+					</div>
+				</Suspense>
 			),
 		},
-		// {
-		// 	ref: sectionRefs[5],
-		// 	components: <Line />,
-		// },
 	];
 
 	return (
 		<>
 			<WelcomeSpaceship />
 			<Header scroll={scrollToSection} sectionRefs={sectionRefs} />
-
-			<main className={`${Sty.all} `}>
+			<main className={`${Sty.all}`}>
 				{sections.map((item, index) => (
 					<section key={index} ref={item.ref} className={frontPage}>
 						{item.components}
 					</section>
 				))}
 			</main>
-
 			<Footer />
 		</>
 	);

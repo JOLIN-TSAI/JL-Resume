@@ -1,23 +1,22 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HomePage from "./pages/index";
+import { Suspense, lazy } from "react";
 import "@/styles/globals.scss";
-// import AboutPage from "@/pages/about";
-// import ProjectsPage from "@/pages/projects";
-// import GamesPage from "@/pages/games";
 import "bootstrap/dist/css/bootstrap.min.css";
 import BackgroundState from "./hooks/backgroundState";
+
+// 懶加載組件
+const HomePage = lazy(() => import("./pages/index"));
 
 const App = () => {
 	return (
 		<BackgroundState>
-			<Router>
-				<Routes>
-					<Route path="/" element={<HomePage />} />
-					{/* <Route path="/about" element={<AboutPage />} />
-				<Route path="/projects" element={<ProjectsPage />} />
-				<Route path="/games" element={<GamesPage />} /> */}
-				</Routes>
-			</Router>
+			<Suspense fallback={<div>loading ... </div>}>
+				<Router>
+					<Routes>
+						<Route path="/" element={<HomePage />} />
+					</Routes>
+				</Router>
+			</Suspense>
 		</BackgroundState>
 	);
 };
