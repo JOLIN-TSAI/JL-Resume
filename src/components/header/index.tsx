@@ -28,7 +28,8 @@ export default function Index({ scroll, sectionRefs }: HeaderProps) {
 	const { toggleMode, isDarkMode } = useBackgroundState();
 	const [currentSectionIndex, setCurrentSectionIndex] = useState<
 		number | null
-	>(null);
+	>(null); //區塊索引
+
 	useEffect(() => {
 		const setInitialSection = () => {
 			sectionRefs.forEach((ref, index) => {
@@ -39,13 +40,15 @@ export default function Index({ scroll, sectionRefs }: HeaderProps) {
 						bounding.top < window.innerHeight
 					) {
 						setCurrentSectionIndex(index);
-					}
+					} //視窗範圍內，就更新
 				}
 			});
 			if (currentSectionIndex === null) setCurrentSectionIndex(0); // 預設第一個區域
 		};
 
 		setInitialSection();
+
+		//監聽區塊
 		const observer = new IntersectionObserver((entries) => {
 			entries.forEach((entry) => {
 				if (entry.isIntersecting) {
@@ -64,7 +67,8 @@ export default function Index({ scroll, sectionRefs }: HeaderProps) {
 				if (ref.current) observer.unobserve(ref.current);
 			});
 		};
-	}, [sectionRefs]);
+	}, [currentSectionIndex, sectionRefs]);
+
 	return (
 		<header className={`${Sty.headerAll} container-fluid`}>
 			<div className="row w-100 px-xl-5 mx-auto">
